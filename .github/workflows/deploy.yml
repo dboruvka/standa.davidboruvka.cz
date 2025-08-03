@@ -1,13 +1,14 @@
-name: Deploy Shoptet
+name: Deploy to Shoptet SFTP
 
 on:
   push:
     branches:
-      - main
+      - main   # nebo 'master', podle tvé větve
 
 jobs:
   deploy:
     runs-on: ubuntu-22.04
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -17,13 +18,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build project
         run: npm run build
 
-      - name: FTP Deploy
+      - name: SFTP Deploy to Shoptet
         uses: milanmk/actions-file-deployer@master
         with:
           sync: full
