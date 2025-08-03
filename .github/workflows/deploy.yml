@@ -32,7 +32,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           # Cesta ke generovaným minifikovaným souborům (output/...) 
           local-dir: ./output/
-          server-dir: /output/
+          server-dir: /webs/dev.davidboruvka.cz/
           exclude: |
             **/*.css
             **/*.js
