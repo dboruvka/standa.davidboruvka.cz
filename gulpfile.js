@@ -48,8 +48,8 @@ function scripts() {
 // Přepisování v proxy
 const rewriteRules = [
   {
-  match: /<link class="dev_style" rel="stylesheet" href="https:\/\/cdn\.myshoptet\.com\/usr\/380023\.myshoptet\.com\/user\/documents\/webs\/dev\.davidboruvka\.cz\/db-style\.min\.css">/g,
-  replace: '<link class="dev_style" rel="stylesheet" href="/db-style.min.css">',
+  match: "",
+  replace: '<link class="dev_style" rel="stylesheet" href="/db-style.css">',
 },
 
   {
@@ -57,7 +57,7 @@ const rewriteRules = [
     replace: '$1<script class="dev_script" src="/db-script.min.js"></script>',
   },
   {
-    match: /<link class="custom_style" href="https:\/\/cdn\.myshoptet\.com.*>/gi,
+    match: /<link class="dev_style" href="https:\/\/cdn\.myshoptet\.com.*>/gi,
     replace: '',
   },
   {
