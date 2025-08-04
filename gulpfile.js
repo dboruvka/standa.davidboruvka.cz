@@ -1,52 +1,42 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
-const header = require('gulp-header');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 const path = require('path');
 
-// Pořadí SCSS a JS souborů
-const scssOrder = [
-  'css/header.scss',
-  'css/footer.scss',
-  'css/**/*.scss'
-];
+// Hlavní SCSS soubor!
+const mainScss = 'css/main.scss';
 const jsOrder = [
   'js/header.js',
   'js/**/*.js'
 ];
 
-// Automatické vložení importu proměnných
-//const variableImport = `@use "../defaults/variables";\n`;
-const variableImport = `@use "../defaults/variables" as *;\n@use "../defaults/mixins" as *;\n`;
-
-// Stylování: běžný + minifikovaný soubor
+// Kompilace a minifikace SCSS (builduj JEN main.scss)
 function styles() {
-  return gulp.src(scssOrder)
-    .pipe(header(variableImport))
-    .pipe(concat('db-style.scss'))
-    .pipe(sass({ outputStyle: 'expanded', includePaths: ['defaults', 'css'] }).on('error', sass.logError))
-    .pipe(gulp.dest('output/')) // Vygeneruje db-style.css (neminifikovaný)
+  return gulp.src(mainScss)
+    .pipe(sass({ outputStyle: 'expanded', includePaths: ['css', 'defaults'] }).on('error', sass.logError))
+    .pipe(concat('db-style.css'))
+    .pipe(gulp.dest('output/')) // neminifikovaný
     .pipe(cleanCSS())
     .pipe(concat('db-style.min.css'))
     .pipe(gulp.dest('output/'))
     .pipe(browserSync.stream());
 }
 
-// Skripty: běžný + minifikovaný soubor
+// Kompilace a minifikace JS
 function scripts() {
   return gulp.src(jsOrder)
     .pipe(concat('db-script.js'))
-    .pipe(gulp.dest('output/')) // Vygeneruje db-script.js (neminifikovaný)
+    .pipe(gulp.dest('output/')) // neminifikovaný
     .pipe(uglify())
     .pipe(concat('db-script.min.js'))
     .pipe(gulp.dest('output/'))
     .pipe(browserSync.stream());
 }
 
-// Přepisování v proxy (Shoptet)
+// Přepisování v proxy
 const rewriteRules = [
   {
     match: /(<!-- place head codes here -->)/g,
@@ -66,10 +56,10 @@ const rewriteRules = [
   },
 ];
 
-// Serve s browserSync proxy
+// BrowserSync proxy pro Shoptet
 function serve() {
   browserSync.init({
-    watch: false,
+    watch: true,
     open: false,
     proxy: "https://dev.davidboruvka.cz",
     serveStatic: [path.join(__dirname, 'output')],
@@ -82,7 +72,7 @@ function serve() {
   gulp.watch('js/**/*.js', scripts);
 }
 
-// Export hlavních tasků
+// Hlavní tasky
 exports.styles = styles;
 exports.scripts = scripts;
 exports.serve = gulp.series(styles, scripts, serve);
