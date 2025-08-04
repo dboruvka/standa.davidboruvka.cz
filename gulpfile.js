@@ -15,7 +15,10 @@ const jsOrder = [
 
 
 function images() {
-  return gulp.src('images/**/*')
+  return gulp.src([
+    'images/**/*.{jpg,jpeg,png,gif,svg,webp}', // pouze obrázky
+    '!images/**/._*' // ignorovat macOS metadata soubory
+  ])
     .pipe(gulp.dest('output/images'));
 }
 
