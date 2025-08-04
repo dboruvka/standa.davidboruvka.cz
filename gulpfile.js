@@ -83,4 +83,4 @@ exports.scripts = scripts;
 exports.images = images;
 exports.serve = gulp.series(styles, scripts, images, serve);
 exports.default = exports.serve;
-exports.build = gulp.series(styles, scripts, images); // ← toto přidej
+exports.build = gulp.series(styles, scripts, images);
