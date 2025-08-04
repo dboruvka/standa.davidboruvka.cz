@@ -5,4 +5,23 @@
 #footer
 {
  background-color: $pozadi;
+ color: red !important;
+}
+
+
+.custom-footer__articles
+{
+  // Jemné rozostřené pozadí s gradientem
+  background: linear-gradient(135deg, rgba($modra, 0.85) 70%, rgba($bezova, 0.6) 100%);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  // Ohraničení a padding
+  border-top: 2px solid rgba($zluta, 0.5);
+  border-bottom: 2px solid rgba($oranzova, 0.3);
+  padding: 2.5rem 1.5rem;
+
+  // Barva textu
+  color: $bezova;
+
 }
