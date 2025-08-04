@@ -1,3 +1,8 @@
 @use "../defaults/_variables" as *;
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
+
+#footer
+{
+ background-color: $pozadi;
+}

@@ -105,3 +105,24 @@ h6,
 #header .header-top, #header .header-top a {
   color: #f9c45c;
 }
+
+body {
+  background-image: url(https://dev.davidboruvka.cz/user/documents/webs/dev.davidboruvka.cz/images/pozadi.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+#content-wrapper {
+  background-color: transparent;
+}
+
+#footer {
+  background-color: transparent;
+}

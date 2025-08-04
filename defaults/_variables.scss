@@ -1,5 +1,5 @@
-$obrazky: 'https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/dev.davidboruvka.cz/images/';
-$pozadí: $obrazky + 'pozadi.jpg';
+$obrazky: 'https://dev.davidboruvka.cz/user/documents/webs/dev.davidboruvka.cz/images/';
+$url_pozadí: $obrazky + 'pozadi.jpg';
 $breakpoints: (
 	0: 0px,
 	xs: 480px,
@@ -10,13 +10,14 @@ $breakpoints: (
 );
 
 
-
+$pozadi: transparent;
 $modra: #21556d;
 $zluta: #f9c45c;
 $oranzova: #f17d3e;
 $zelená: #7fbb42;
 $tmavá: #3d7637;
 $béžová: #ffe7ad;
+
 
 
 
