@@ -127,45 +127,59 @@ body {
   background-color: transparent;
 }
 
-.custom-footer__articles {
+.custom-footer__articles2 {
   position: relative;
-  max-width: 520px;
-  margin: 2.5rem auto;
-  padding: 2.2rem 2.1rem 1.7rem 2.1rem;
-  background: linear-gradient(120deg, rgba(255, 231, 173, 0.45) 45%, rgba(33, 85, 109, 0.17) 100%);
-  border-radius: 22px;
-  box-shadow: 0 8px 40px 0 rgba(33, 85, 109, 0.19), 0 1.5px 7px 0 rgba(241, 125, 62, 0.07), inset 0 1px 12px rgba(255, 231, 173, 0.21);
-  backdrop-filter: blur(10px) saturate(1.18);
-  -webkit-backdrop-filter: blur(10px) saturate(1.18);
-  border: 1.5px solid rgba(33, 85, 109, 0.23);
-  color: rgba(61, 118, 55, 0.91);
+}
+.custom-footer__articles2 h4 {
+  color: rgba(2, 1, 1, 0.7);
+  font-size: 3rem;
+}
+.custom-footer__articles2 ul li {
+  color: rgba(2, 1, 1, 0.7);
+  font-size: 2rem;
+}
+
+.custom-footer__articles {
+  background-color: rgba(33, 85, 109, 0.5);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(217, 217, 217, 0.3);
+  box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+  position: relative;
   overflow: hidden;
+  max-width: 50%;
+}
+.custom-footer__articles h4 {
+  color: rgba(249, 196, 92, 0.9);
+  font-size: 3rem;
+}
+.custom-footer__articles ul li,
+.custom-footer__articles ul li a {
+  color: rgba(247, 243, 243, 0.9);
+  font-size: 2rem;
 }
 .custom-footer__articles::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1.5px solid rgba(127, 187, 66, 0.13);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(33, 85, 109, 0.1) 0%, rgba(249, 196, 92, 0.03) 100%);
   pointer-events: none;
-  mix-blend-mode: screen;
   z-index: 1;
-}
-.custom-footer__articles::after {
-  content: "";
-  position: absolute;
-  inset: 0;
   border-radius: inherit;
-  opacity: 0.09;
-  pointer-events: none;
+}
+.custom-footer__articles .content {
+  position: relative;
   z-index: 2;
-  background-size: cover;
 }
-.custom-footer__articles h4 {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 3rem;
-}
-.custom-footer__articles ul li {
-  color: rgba(0, 0, 0, 0.7);
-  font-size: 2rem;
+@media (max-width: 768px) {
+  .custom-footer__articles {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
 }

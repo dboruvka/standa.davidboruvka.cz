@@ -8,47 +8,10 @@
 }
 
 
-.custom-footer__articles
+.custom-footer__articles2
 {
  position: relative;
-  max-width: 520px;
-  margin: 2.5rem auto;
-  padding: 2.2rem 2.1rem 1.7rem 2.1rem;
-  background: linear-gradient(
-    120deg,
-    rgba($bezova, 0.45) 45%,
-    rgba($modra, 0.17) 100%
-  );
-  border-radius: 22px;
-  box-shadow:
-    0 8px 40px 0 rgba($modra, 0.19),
-    0 1.5px 7px 0 rgba($oranzova, 0.07),
-    inset 0 1px 12px rgba($bezova, 0.21);
-  backdrop-filter: blur(10px) saturate(1.18);
-  -webkit-backdrop-filter: blur(10px) saturate(1.18);
-  border: 1.5px solid rgba($modra, 0.23);
-  color: rgba($tmava, 0.91);
-  overflow: hidden;
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    border: 1.5px solid rgba($zelena, 0.13);
-    pointer-events: none;
-    mix-blend-mode: screen;
-    z-index: 1;
-  }
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    opacity: 0.09;
-    pointer-events: none;
-    z-index: 2;
-    background-size: cover;
-  }
+  
 h4 {
   color: rgba($cerna, 0.7);
   font-size: 3rem;
@@ -60,3 +23,84 @@ ul li {
 
 
   }
+
+
+
+
+.custom-footer__articles {
+  h4 {
+  color: rgba($zluta, 0.9);
+  font-size: 3rem;
+}
+ul li, 
+ul li a
+{
+  color: rgba($bila, 0.9);
+  font-size: 2rem;
+
+}
+
+  // Background s průhledností 50%
+  background-color: rgba($modra, 0.5); // bg-mystic-dark/50
+  
+  // Backdrop filter pro efekt rozmazání - medium (md) blur
+  backdrop-filter: blur(11px); // backdrop-blur-md
+  -webkit-backdrop-filter: blur(11px); // Pro Safari kompatibilitu
+  
+  // Border radius - extra large (3xl) - podle Tailwind konfigurace 24px
+  border-radius: 24px; // rounded-3xl
+  
+  // Padding - 8 jednotek (32px nebo 2rem)
+  padding: 2rem; // p-8
+  
+  // Border - jednoduchý okraj s barvou chakra-heart s 30% průhledností
+  border: 1px solid rgba($border, 0.3); // border border-chakra-heart/30
+  
+  // Další vlastnosti, které jsou obvykle přidružené s tímto typem UI prvku
+  box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2); // shadow-large podle vašeho nastavení
+  
+  // Přidané vlastnosti pro lepší vzhled
+  transition: all 0.3s ease-in-out; // Plynulé přechody
+  position: relative; // Pro případné pozicování vnitřních prvků
+  overflow: hidden; // Pro případ přetečení obsahu
+  max-width: 50%;
+
+// $pozadi: transparent;
+// $modra: #21556d;
+// $zluta: #f9c45c;
+// $oranzova: #f17d3e;
+// $zelena: #7fbb42;
+// $tmava: #3d7637;
+// $bezova: #ffe7ad;
+// $cerna: #020101;
+// $border: #d9d9d9;
+
+  // Vnitřní prvky
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.03) 100%);
+    pointer-events: none; // Aby nezasahovalo do interakce s obsahem
+    z-index: 1;
+    border-radius: inherit;
+  }
+
+  
+  // Vnitřní obsah
+  .content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  // Responsivní vlastnosti
+  @media (max-width: 768px) {
+    padding: 1.5rem; // Menší padding na mobilních zařízeních
+    border-radius: 16px; // Menší zaoblení na mobilních zařízeních
+  }
+}
+
+

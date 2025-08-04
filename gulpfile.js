@@ -47,22 +47,15 @@ function scripts() {
 
 // Přepisování v proxy
 const rewriteRules = [
-  {
-  match: "",
+{
+  match: /<link class="dev_style".*?>/gi,
   replace: '<link class="dev_style" rel="stylesheet" href="/db-style.css">',
 },
 
+
   {
-    match: /(<!-- place body codes here -->)/g,
-    replace: '$1<script class="dev_script" src="/db-script.min.js"></script>',
-  },
-  {
-    match: /<link class="dev_style" href="https:\/\/cdn\.myshoptet\.com.*>/gi,
-    replace: '',
-  },
-  {
-    match: /<script class="custom_script" src="https:\/\/cdn.myshoptet\.com.*><\/script>/gi,
-    replace: '',
+    match: /<script\s+class="dev_script".*?<\/script>/gi,
+    replace: '$1<script class="dev_script" src="/db-script.js"></script>',
   },
 ];
 
