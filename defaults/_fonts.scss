@@ -1,45 +1,47 @@
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Regular.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Italic.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-SemiBold.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-SemiBoldItalic.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-SemiBoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Bold.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Crimson Text";
-  src: url("https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-BoldItalic.ttf") format("truetype");
+  font-family: 'Crimson Text';
+  src: url('https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/lib/fonts/crimson_text/CrimsonText-BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
 }
+
+
 .external-fonts-loaded,
 .blank-mode,
 .external-fonts-loaded #navigation,
@@ -76,7 +78,10 @@ body.blank-mode,
 .p-final-price-wrapper .price-final,
 .quantity input,
 .footer-rows .news-item-widget h5,
-#header .site-name a.text-logo {
+#header .site-name a.text-logo
+
+
+{
   font-family: "Crimson Text", serif;
 }
 
@@ -92,16 +97,5 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-weight: 500;
-}
-
-#header {
-  background-color: #21556d;
-  color: white;
-}
-#header .search {
-  display: none;
-}
-#header .header-top, #header .header-top a {
-  color: #f9c45c;
+	font-weight: 500;
 }

@@ -1,4 +1,5 @@
-$obrazky: 'https://cdn.myshoptet.com/usr/dev.davidboruvka.cz/user/documents/standaklapuch.com/images/';
+$obrazky: 'https://cdn.myshoptet.com/usr/380023.myshoptet.com/user/documents/webs/dev.davidboruvka.cz/images/';
+$pozadí: $obrazky + 'pozadi.jpg';
 $breakpoints: (
 	0: 0px,
 	xs: 480px,
@@ -8,8 +9,16 @@ $breakpoints: (
 	xl: 1440px,
 );
 
-$cervena: yellow;
-$nadpis: 17px;
+
+
+$modra: #21556d;
+$zluta: #f9c45c;
+$oranzova: #f17d3e;
+$zelená: #7fbb42;
+$tmavá: #3d7637;
+$béžová: #ffe7ad;
+
+
 
 $xs: 480px;
 $s: 768px;

@@ -1,5 +1,6 @@
-@forward "../defaults/_variables";
-@use "../defaults/_variables" as *;
+@use "../defaults/_variables";
 @use "../defaults/_mixins" as *;
+@use "../defaults/_fonts" as *;
+
 @use "header";
 @use "footer";

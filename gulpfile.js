@@ -13,6 +13,13 @@ const jsOrder = [
   'js/**/*.js'
 ];
 
+
+function images() {
+  return gulp.src('images/**/*')
+    .pipe(gulp.dest('output/images'));
+}
+
+
 // Kompilace a minifikace SCSS (builduj JEN main.scss)
 function styles() {
   return gulp.src(mainScss)
@@ -39,9 +46,10 @@ function scripts() {
 // Přepisování v proxy
 const rewriteRules = [
   {
-    match: /(<!-- place head codes here -->)/g,
-    replace: '$1<link class="dev_style" rel="stylesheet" href="/db-style.min.css">',
-  },
+  match: /<link class="dev_style" rel="stylesheet" href="https:\/\/cdn\.myshoptet\.com\/usr\/380023\.myshoptet\.com\/user\/documents\/webs\/dev\.davidboruvka\.cz\/db-style\.min\.css">/g,
+  replace: '<link class="dev_style" rel="stylesheet" href="/db-style.min.css">',
+},
+
   {
     match: /(<!-- place body codes here -->)/g,
     replace: '$1<script class="dev_script" src="/db-script.min.js"></script>',
@@ -75,6 +83,6 @@ function serve() {
 // Hlavní tasky
 exports.styles = styles;
 exports.scripts = scripts;
-exports.build = gulp.series(styles, scripts);
-exports.serve = gulp.series(styles, scripts, serve);
+exports.images = images;
+exports.serve = gulp.series(styles, scripts, images, serve);
 exports.default = exports.serve;
