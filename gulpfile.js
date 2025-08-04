@@ -69,7 +69,7 @@ const rewriteRules = [
 // Serve s browserSync proxy
 function serve() {
   browserSync.init({
-    watch: true,
+    watch: false,
     open: false,
     proxy: "https://dev.davidboruvka.cz",
     serveStatic: [path.join(__dirname, 'output')],
