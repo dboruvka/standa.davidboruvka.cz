@@ -8,73 +8,46 @@
 }
 
 
-.custom-footer__articles2
-{
- position: relative;
-  
-h4 {
-  color: rgba($cerna, 0.7);
-  font-size: 3rem;
-}
-ul li {
-  color: rgba($cerna, 0.7);
-  font-size: 2rem;
-}
-
-
-  }
-
-
 
 
 .custom-footer__articles {
+  position: relative;
+  animation: breathing 4s ease-in-out infinite; // Animace nahoru a dolů přímo na hlavním prvku
+  
+  // Odstranili jsme testovací prvek a přidali stínovou animaci
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    animation: footerGlow 4s ease-in-out infinite;
+    pointer-events: none; // Aby nezasahoval do interakce
+    z-index: -1; // Pod hlavním prvkem
+  }
+  
   h4 {
   color: rgba($zluta, 0.9);
   font-size: 3rem;
+  font-weight: 700;
 }
 ul li, 
 ul li a
 {
   color: rgba($bila, 0.9);
-  font-size: 2rem;
-
+  font-size: 2.5rem;
 }
-
-  // Background s průhledností 50%
-  background-color: rgba($modra, 0.5); // bg-mystic-dark/50
+  background-color: rgba($modra, 0.5);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border-radius: $radius-xl;
   
-  // Backdrop filter pro efekt rozmazání - medium (md) blur
-  backdrop-filter: blur(11px); // backdrop-blur-md
-  -webkit-backdrop-filter: blur(11px); // Pro Safari kompatibilitu
-  
-  // Border radius - extra large (3xl) - podle Tailwind konfigurace 24px
-  border-radius: 24px; // rounded-3xl
-  
-  // Padding - 8 jednotek (32px nebo 2rem)
-  padding: 2rem; // p-8
-  
-  // Border - jednoduchý okraj s barvou chakra-heart s 30% průhledností
-  border: 1px solid rgba($border, 0.3); // border border-chakra-heart/30
-  
-  // Další vlastnosti, které jsou obvykle přidružené s tímto typem UI prvku
-  box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2); // shadow-large podle vašeho nastavení
-  
-  // Přidané vlastnosti pro lepší vzhled
-  transition: all 0.3s ease-in-out; // Plynulé přechody
-  position: relative; // Pro případné pozicování vnitřních prvků
+  padding: $padding-xl;
+  border: 1px solid rgba($border, 0.3);
   overflow: hidden; // Pro případ přetečení obsahu
   max-width: 50%;
-
-// $pozadi: transparent;
-// $modra: #21556d;
-// $zluta: #f9c45c;
-// $oranzova: #f17d3e;
-// $zelena: #7fbb42;
-// $tmava: #3d7637;
-// $bezova: #ffe7ad;
-// $cerna: #020101;
-// $border: #d9d9d9;
-
   // Vnitřní prvky
   &::before {
     content: '';
@@ -89,13 +62,7 @@ ul li a
     border-radius: inherit;
   }
 
-  
-  // Vnitřní obsah
-  .content {
-    position: relative;
-    z-index: 2;
-  }
-  
+
   // Responsivní vlastnosti
   @media (max-width: 768px) {
     padding: 1.5rem; // Menší padding na mobilních zařízeních
