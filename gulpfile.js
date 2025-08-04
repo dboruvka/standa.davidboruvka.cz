@@ -75,5 +75,6 @@ function serve() {
 // Hlavní tasky
 exports.styles = styles;
 exports.scripts = scripts;
+exports.build = gulp.series(styles, scripts);
 exports.serve = gulp.series(styles, scripts, serve);
 exports.default = exports.serve;
