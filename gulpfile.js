@@ -19,7 +19,6 @@ function images() {
     .pipe(gulp.dest('output/images'));
 }
 
-
 // Kompilace a minifikace SCSS (builduj JEN main.scss)
 function styles() {
   return gulp.src(mainScss)
