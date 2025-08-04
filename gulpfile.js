@@ -78,7 +78,6 @@ function serve() {
   gulp.watch('css/**/*.scss', styles);
   gulp.watch('js/**/*.js', scripts);
 }
-
 exports.styles = styles;
 exports.scripts = scripts;
 exports.images = images;
