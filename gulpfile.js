@@ -19,8 +19,8 @@ const jsOrder = [
 ];
 
 // Automatické vložení importu proměnných
-//const variableImport = `@import "../defaults/variables";\n`;
-const variableImport = `@import "../defaults/variables";\n@import "../defaults/mixins";\n`;
+//const variableImport = `@use "../defaults/variables";\n`;
+const variableImport = `@use "../defaults/variables" as *;\n@use "../defaults/mixins" as *;\n`;
 
 // Stylování: běžný + minifikovaný soubor
 function styles() {
