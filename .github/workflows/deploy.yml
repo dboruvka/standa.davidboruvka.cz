@@ -24,10 +24,11 @@ jobs:
       - name: Build project
         run: npm run build
 
-      # TADY přidej čistící krok!
-      - name: Remove non-minified files
+      # Čištění nepotřebných souborů
+      - name: Remove non-minified CSS and JS files
         run: |
-          find output -type f ! -name "*.min.*" -delete
+          cd output
+          rm -f db-style.css db-script.js
       - name: Remove Mac resource fork files
         run: find output -name '._*' -type f -delete
 
