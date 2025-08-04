@@ -3,7 +3,7 @@ name: Deploy to Shoptet SFTP
 on:
   push:
     branches:
-      - main   # nebo 'master', podle tvé větve
+      - main
 
 jobs:
   deploy:
@@ -23,6 +23,11 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      # TADY přidej čistící krok!
+      - name: Remove non-minified files
+        run: |
+          find output -type f ! -name "*.min.*" -delete
 
       - name: SFTP Deploy to Shoptet
         uses: milanmk/actions-file-deployer@master
