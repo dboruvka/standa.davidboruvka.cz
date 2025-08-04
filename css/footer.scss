@@ -1,5 +1,8 @@
+@use "../defaults/_variables" as *;
+@use "../defaults/_mixins" as *;
+
 #footer
 {
-    color:blue;
-    font-size: 15px;
+    color: $cervena;
+    font-size: $nadpis;
 }

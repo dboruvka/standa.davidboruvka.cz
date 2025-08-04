@@ -1,4 +1,5 @@
-@import "../defaults/variables";
-@import "../defaults/mixins";
-@import "header";
-@import "footer";
+@forward "../defaults/_variables";
+@use "../defaults/_variables" as *;
+@use "../defaults/_mixins" as *;
+@use "header";
+@use "footer";

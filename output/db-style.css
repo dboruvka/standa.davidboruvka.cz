@@ -1,9 +1,9 @@
 .navigation-in ul li a b {
-  font-size: 17px;
-  color: blue;
+  font-size: 15px;
+  color: yellow;
 }
 
 #footer {
-  color: blue;
-  font-size: 15px;
+  color: yellow;
+  font-size: 17px;
 }
