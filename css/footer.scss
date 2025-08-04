@@ -53,9 +53,7 @@ ul li a
 
   // Responsivní vlastnosti
   @media (max-width: 768px) {
-    padding: 1.5rem; // Menší padding na mobilních zařízeních
-    border-radius: 16px; // Menší zaoblení na mobilních zařízeních
+    padding: $padding-m;
+    border-radius: $radius-m;
   }
 }
-
-
