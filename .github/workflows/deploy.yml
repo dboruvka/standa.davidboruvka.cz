@@ -28,6 +28,8 @@ jobs:
       - name: Remove non-minified files
         run: |
           find output -type f ! -name "*.min.*" -delete
+      - name: Remove Mac resource fork files
+        run: find output -name '._*' -type f -delete
 
       - name: SFTP Deploy to Shoptet
         uses: milanmk/actions-file-deployer@master
