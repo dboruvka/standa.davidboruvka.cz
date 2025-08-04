@@ -70,7 +70,7 @@ const rewriteRules = [
 function serve() {
   browserSync.init({
     watch: true,
-    open: true,
+    open: false,
     proxy: "https://dev.davidboruvka.cz",
     serveStatic: [path.join(__dirname, 'output')],
     rewriteRules: rewriteRules,
