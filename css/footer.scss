@@ -16,7 +16,7 @@
   box-shadow: 5px 5px 20px rgba(251, 191, 36, 0.3); // Statický výrazný žlutý stín
 
   h4 {
-  color: rgba($zluta, 0.9);
+  color: rgba($zluta, 1);
   font-size: 3rem;
   font-weight: 700;
 }
@@ -25,15 +25,16 @@ ul li a
 {
   color: rgba($bila, 0.9);
   font-size: 2.5rem;
+  font-weight: 600;
 }
-  background-color: rgba($modra, 0.5);
+  background-color: rgba($modra, 0.55);
   backdrop-filter: blur(11px);
   -webkit-backdrop-filter: blur(11px);
   border-radius: $radius-xl;
   
   padding: $padding-xl;
   border: 1px solid rgba($border, 0.3);
-  overflow: hidden; // Pro případ přetečení obsahu
+  overflow: hidden;
   max-width: 50%;
   // Vnitřní prvky
   &::before {
@@ -43,7 +44,7 @@ ul li a
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.04) 100%);
+    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.05) 100%);
     pointer-events: none; // Aby nezasahovalo do interakce s obsahem
     z-index: 1;
     border-radius: inherit;
