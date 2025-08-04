@@ -27,9 +27,9 @@ ul li a
   font-size: 2.5rem;
   font-weight: 600;
 }
-  background-color: rgba($modra, 0.55);
-  backdrop-filter: blur(11px);
-  -webkit-backdrop-filter: blur(11px);
+  background-color: rgba($modra, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
   border-radius: $radius-xl;
   
   padding: $padding-xl;

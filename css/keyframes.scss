@@ -3,7 +3,7 @@
 
 @keyframes footerGlow {
   0%, 100% {
-    box-shadow: 0 10px 15px rgba(244, 0, 183, 0.5);
+    box-shadow: 0 10px 15px rgba(244, 0, 183, $opacity);
   }
   50% {
     box-shadow: 0 10px 30px rgba(244, 0, 183, 1);
