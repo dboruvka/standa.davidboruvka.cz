@@ -12,22 +12,9 @@
 
 .custom-footer__articles {
   position: relative;
-  animation: breathing 4s ease-in-out infinite; // Animace nahoru a dolů přímo na hlavním prvku
-  
-  // Odstranili jsme testovací prvek a přidali stínovou animaci
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    animation: footerGlow 4s ease-in-out infinite;
-    pointer-events: none; // Aby nezasahoval do interakce
-    z-index: -1; // Pod hlavním prvkem
-  }
-  
+  animation: breathing 4s ease-in-out infinite;
+  box-shadow: 5px 5px 20px rgba(251, 191, 36, 0.3); // Statický výrazný žlutý stín
+
   h4 {
   color: rgba($zluta, 0.9);
   font-size: 3rem;
@@ -56,7 +43,7 @@ ul li a
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.03) 100%);
+    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.04) 100%);
     pointer-events: none; // Aby nezasahovalo do interakce s obsahem
     z-index: 1;
     border-radius: inherit;

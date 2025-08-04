@@ -1,23 +1,17 @@
-@charset "UTF-8";
 @keyframes footerGlow {
-  0% {
-    box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2);
+  0%, 100% {
+    box-shadow: 0 10px 15px rgba(244, 0, 183, 0.5);
   }
   50% {
-    box-shadow: 0 10px 25px rgba(11, 202, 255, 0.4);
-  }
-  100% {
-    box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2);
+    box-shadow: 0 10px 30px rgb(244, 0, 183);
   }
 }
 @keyframes breathing {
   0%, 100% {
     transform: translateY(0);
-    background-color: rgba(33, 85, 109, 0.1); /* $modra s nižší průhledností */
   }
   50% {
-    transform: translateY(-10px);
-    background-color: rgba(33, 85, 109, 0.3); /* $modra s vyšší průhledností */
+    transform: translateY(-7px);
   }
 }
 @font-face {
@@ -152,6 +146,7 @@ body {
 .custom-footer__articles {
   position: relative;
   animation: breathing 4s ease-in-out infinite;
+  box-shadow: 5px 5px 20px rgba(251, 191, 36, 0.3);
   background-color: rgba(33, 85, 109, 0.5);
   backdrop-filter: blur(11px);
   -webkit-backdrop-filter: blur(11px);
@@ -160,18 +155,6 @@ body {
   border: 1px solid rgba(217, 217, 217, 0.3);
   overflow: hidden;
   max-width: 50%;
-}
-.custom-footer__articles::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: inherit;
-  animation: footerGlow 4s ease-in-out infinite;
-  pointer-events: none;
-  z-index: -1;
 }
 .custom-footer__articles h4 {
   color: rgba(251, 191, 36, 0.9);
@@ -190,7 +173,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(33, 85, 109, 0.1) 0%, rgba(251, 191, 36, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(33, 85, 109, 0.1) 0%, rgba(251, 191, 36, 0.04) 100%);
   pointer-events: none;
   z-index: 1;
   border-radius: inherit;

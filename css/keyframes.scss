@@ -2,26 +2,19 @@
 @use "../defaults/_mixins" as *;
 
 @keyframes footerGlow {
-  0% {
-    box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2);
+  0%, 100% {
+    box-shadow: 0 10px 15px rgba(244, 0, 183, 0.5);
   }
   50% {
-    box-shadow: 0 10px 25px rgba(11, 202, 255, 0.4);
-  }
-  100% {
-    box-shadow: 0 10px 15px rgba(11, 202, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(244, 0, 183, 1);
   }
 }
-
-
 
 @keyframes breathing {
   0%, 100% {
     transform: translateY(0);
-    background-color: rgba(33, 85, 109, 0.1); /* $modra s nižší průhledností */
   }
   50% {
-    transform: translateY(-10px);
-    background-color: rgba(33, 85, 109, 0.3); /* $modra s vyšší průhledností */
+    transform: translateY(-7px);
   }
 }
