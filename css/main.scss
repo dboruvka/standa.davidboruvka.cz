@@ -1,8 +1,8 @@
 @use "keyframes";
-
 @use "../defaults/_variables";
-@use "../defaults/_mixins" as *;
-@use "../defaults/_fonts" as *;
+@use "../defaults/_media";
+@use "../defaults/_mixins";
+@use "../defaults/_fonts";
 
 @use "header";
 @use "body";

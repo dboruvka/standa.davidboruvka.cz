@@ -1,4 +1,5 @@
 @use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
@@ -8,13 +9,11 @@
 }
 
 
-
-
 .custom-footer__articles {
   position: relative;
   animation: breathing 4s ease-in-out infinite;
-  box-shadow: 5px 5px 20px rgba(251, 191, 36, 0.3); // Statický výrazný žlutý stín
-
+  box-shadow: $shadow;
+@include liquid-glass();
   h4 {
   color: rgba($zluta, 1);
   font-size: 3rem;
@@ -27,33 +26,17 @@ ul li a
   font-size: 2.5rem;
   font-weight: 600;
 }
-  background-color: rgba($modra, $opacity);
-  backdrop-filter: blur($blur);
-  -webkit-backdrop-filter: blur($blur);
-  border-radius: $radius-xl;
-  
-  padding: $padding-xl;
-  border: 1px solid rgba($border, 0.3);
-  overflow: hidden;
-  max-width: 50%;
   // Vnitřní prvky
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba($modra, 0.1) 0%, rgba($zluta, 0.05) 100%);
-    pointer-events: none; // Aby nezasahovalo do interakce s obsahem
-    z-index: 1;
-    border-radius: inherit;
+    @include glass-overlay();
   }
 
 
-  // Responsivní vlastnosti
-  @media (max-width: 768px) {
-    padding: $padding-m;
-    border-radius: $radius-m;
-  }
+@include media("<tablet") {
+margin: 10px;
+    padding: $padding-l;
+   border-radius: $radius-l;
+   }
+
+
 }

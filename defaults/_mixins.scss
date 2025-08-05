@@ -1,3 +1,5 @@
+@use "../defaults/_variables" as *;
+
 @mixin marginX($px) {
 	margin-left: $px;
 	margin-right: $px;
@@ -16,4 +18,43 @@
 @mixin paddingY($px) {
 	padding-top: $px;
 	padding-bottom: $px;
+}
+
+@mixin liquid-glass(
+  $color: $modra,
+  $opacity: $opacity,
+  $blur: $blur,
+  $radius: $radius-l,
+  $padding: $padding-l,
+  $border: $modra,
+  $border-opacity: 0.4,
+) {
+  background-color: rgba($color, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border-radius: $radius;
+  padding: $padding;
+  border: 1px solid rgba($border, $border-opacity);
+  overflow: hidden;
+}
+
+@mixin glass-overlay(
+  $deg: 135deg,
+  $color1: $modra,
+  $opacity1: 0.1,
+  $color2: $zluta,
+  $opacity2: 0.05,
+  $z: 1
+) {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    $deg,
+    rgba($color1, $opacity1) 0%,
+    rgba($color2, $opacity2) 100%
+  );
+  pointer-events: none;
+  z-index: $z;
+  border-radius: inherit;
 }
