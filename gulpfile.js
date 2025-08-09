@@ -10,6 +10,10 @@ const path = require('path');
 const mainScss = 'css/main.scss';
 const jsOrder = [
   'js/header.js',
+  'js/layout.js',
+  'js/homepage.js',
+  'js/cart.js',
+  'js/footer.js',
   'js/**/*.js'
 ];
 
@@ -59,15 +63,15 @@ const rewriteRules = [
   },
 ];
 
-// BrowserSync proxy pro Shoptet
+// BrowserSync proxy pro Shoptet - původní funkční konfigurace
 function serve() {
   browserSync.init({
     watch: true,
-    open: false,
-    proxy: "https://dev.davidboruvka.cz",
+    open: true,
+    proxy: "https://www.standaklapuch.com",
     serveStatic: [path.join(__dirname, 'output')],
     rewriteRules: rewriteRules,
-    port: 3020,
+    port: 3022,
     notify: false
   });
 

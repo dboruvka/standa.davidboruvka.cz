@@ -1,0 +1,28 @@
+@use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
+@use "../defaults/_mixins" as *;
+@use "../defaults/_fonts" as *;
+
+
+.in-kosik
+{
+
+.facebook,
+.youtube
+{
+    display: none;
+}
+
+
+h1
+{
+    @include nadpis(4rem);
+}
+
+h2
+{
+    @include nadpis(2rem);
+}
+
+
+}

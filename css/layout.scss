@@ -1,0 +1,65 @@
+@use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
+@use "../defaults/_mixins" as *;
+@use "../defaults/_fonts" as *;
+
+.top-navigation-bar, .navigation-in > ul > li, .homepage-box, .custom-footer, .footer-bottom, .footer-links-icons
+{
+    border: 0;
+}
+.top-navigation-bar-menu, .top-navigation-bar-menu-helper
+{
+ text-transform: unset;
+}
+
+.top-navigation-bar
+{
+    font-size: 16px;
+.container>div
+{
+text-align: right;
+}
+
+
+}
+.cart-empty .empty-cart-boxes
+.cart-empty .cart-row,
+.contact-box>strong,
+.cart-inner .sidebar-in-cart h4
+ {
+display: none !important;
+}
+
+
+
+.external-fonts-loaded .empty-content, .blank-mode .empty-content, .SizeID-button .sb-button, .SizeID-button .sb-button span, .external-fonts-loaded .vote-name, .blank-mode .vote-name, .external-fonts-loaded body, body.blank-mode, .external-fonts-loaded, .blank-mode, .external-fonts-loaded h1, .external-fonts-loaded h2, .external-fonts-loaded h3, .external-fonts-loaded h4, .external-fonts-loaded h5, .external-fonts-loaded .h1, .external-fonts-loaded .h2, .external-fonts-loaded .h3, .external-fonts-loaded .cart-table .main-link, .external-fonts-loaded .cart-related-name, .blank-mode h1, .blank-mode h2, .blank-mode h3, .blank-mode .cart-table .main-link, .blank-mode .cart-related-name, .header-top .btn.cart-count .cart-price, .btn.btn-default, a.btn.btn-default, .external-fonts-loaded .btn, .external-fonts-loaded .price-final, .external-fonts-loaded .products .name {
+    font-family: var(--main-font);
+}
+
+body
+{
+    background-image: var(--bg-desktop);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: absolute;
+    position: relative;    
+}
+
+.top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, 
+#footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content
+ {
+     background-color: transparent !important; 
+ }
+
+
+
+// .top-navigation-bar, .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, #footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .content-wrapper, .category-header, .category-header input[type="radio"]:checked + label, .btn.btn-default, a.btn.btn-default, .filter-sections, .quantity .increase, .quantity .decrease, .shp-tabs-holder, .shp-tabs, .active .shp-tab-link, .shp-tab-link,
+// {
+//     background-color: transparent !important; 
+// }

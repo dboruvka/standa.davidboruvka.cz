@@ -40,5 +40,5 @@ jobs:
           remote-host: 'ftp.myshoptet.com'
           remote-user: ${{ secrets.FTP_USERNAME }}
           remote-password: ${{ secrets.FTP_PASSWORD }}
-          remote-path: /webs/dev.davidboruvka.cz/
+          remote-path: /webs/standaklapuch.com/
           local-path: output

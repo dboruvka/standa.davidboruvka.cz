@@ -1,0 +1,238 @@
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+
+body::before {
+    background-blend-mode: multiply; /* nebo overlay, lighten, ... */
+
+    opacity: 0.7;
+
+    content: "";
+    position: fixed; /* nebo absolute */
+    left: 0;
+    bottom: 0px;
+    width: 600px; /* šířka overlay obrázku */
+    height: 100vh;
+    background-image: url('https://www.standaklapuch.com/user/documents/upload/_nemazat_/standa.png');
+
+background-repeat: no-repeat;
+    background-size: contain; /* nebo cover/dle potřeby */
+    background-position: left bottom;
+    z-index: 1; /* pod obsahem, ale nad backgroundem */
+    pointer-events: none; /* klikání půjde skrz */
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) 
+{
+body::before {
+
+    left: -60px;
+     width: 500px; /* šířka overlay obrázku */
+   
+
+}
+}
+
+
+
+h1, .price-primary, .for-free, .additional-information
+{
+text-shadow:none;
+}
+
+h1
+{
+font-size:33px
+}
+
+.welcome > div
+{
+padding:30px
+}
+
+
+.p-detail .add-to-cart .quantity
+{
+border-radius:5px
+}
+.variant-list select
+{
+width:260px
+}
+
+.variant-list select
+{
+border-radius:10px
+}
+
+
+.country-flag .shp-flag-label, .country-flag .shp-flag-label .shp-flag-name, .unit-value
+{color:white}
+
+.form-control, select {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.p-detail-inner
+{
+margin-bottom:40px
+}
+
+
+.btn.add-to-cart-button:before
+{
+font-size:15px
+}
+
+.btn.add-to-cart-button.btn-lg
+{
+font-size:17px
+}
+
+.quantity input,
+.variant-list select,
+.header-top .btn.cart-count,
+#header .site-name a.text-logo,
+#header .site-name a.text-logo .motto
+{
+font-size:20px;
+font-family:var(--main-font)
+}
+
+.form-group>input.form-control, .form-group>select.form-control
+{
+font-weight:600
+}
+.recapitulation-single>strong
+{
+font-size:18px
+}
+.order-summary-inner .cart-item-name a
+{
+font-size:17px
+}
+
+.btn.btn-primary, a.btn.btn-primary, ul, p,.js-validator-msg.msg-info,.js-validator-msg.msg-error, .form-group label.whole-width
+{
+text-shadow: color(srgb 1 1 1 / 0.31) 0px 1px 0px;
+}
+
+@media (max-width: 768px) 
+{
+
+.responsive-tools>a[data-target="navigation"]
+{
+top:0
+}
+
+.products-block.products > div
+{
+margin-bottom:15px
+}
+
+#header .site-name
+{
+top:-44px
+}
+
+#header .site-name a.text-logo
+{
+font-size:29px
+}
+}
+
+.top-navigation-bar,
+#footer
+{
+    background-color: var(--bg-transparency) !important;
+}
+.in-index .overall-wrapper,
+.content-inner article > div
+{
+margin-bottom:40px;
+}
+
+#footer .footer-links-icons,.social-buttons-wrapper
+{
+display:none
+}
+
+
+.top-nav-scroll
+{
+background-color: hsla(141, 65%, 75%, 0.9) !important
+}
+
+.type-category .product
+{
+  padding:25px;
+    background-color: var(--bg-transparency);
+    border-radius:15px;
+
+}
+.menu-item-724
+{
+display:none;
+}
+
+@media (max-width: 350px) 
+{
+#header .site-name a.text-logo
+  {
+    font-size:30px !important;
+    margin-top:9px
+  }
+#header .cart-count
+{
+top:-44px !important;
+right:45px !important;
+}
+  
+.responsive-tools>a[data-target=navigation]
+{
+top:0px  !important;
+}
+  
+.custom-footer ul
+{
+flex-direction:column !important;
+}
+}
+
+.products-block.products > div
+{
+margin-right:15px
+}
+
+.flag.flag-new
+{
+background-color: #96e9b3;
+}
+
+
+@media (min-width: 768px) 
+{
+
+
+.contact-box a,
+.contact-box ul li>span
+{
+font-size:16px;
+}
+
+.in-index .product
+{
+    background-color: var(--bg-transparency);
+    border-radius: 15px;
+    border:0 !important;
+}
+
+
+}

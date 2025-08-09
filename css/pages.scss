@@ -1,0 +1,118 @@
+@use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
+@use "../defaults/_mixins" as *;
+@use "../defaults/_fonts" as *;
+
+
+.type-page 
+{
+
+.breadcrumbs
+{
+    display: none;
+}    
+
+#content-wrapper
+{
+.content-wrapper-in
+{
+    position: relative;
+//  animation: breathing 4s ease-in-out infinite;
+     animation: shadowMove 4s ease-in-out infinite;
+     padding: $padding-xl;
+  box-shadow: $shadow;
+  &::before {
+    @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+  }
+  @include glass();
+
+}
+.content-inner
+{
+    max-width: unset
+}
+h1
+{
+    @include nadpis(4rem);
+}
+h2
+{
+    @include nadpis(2.5rem);
+}
+
+
+}
+
+}
+
+
+
+.in-news #content-wrapper .content-wrapper-in 
+{
+
+    background-color: transparent !important;
+
+article ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 24px;
+  width: 100%;
+}
+
+article ul li {
+  box-sizing: border-box;
+  position: relative;
+  padding: $padding-l;
+  border-left: 6px solid var(--main-color);
+  min-height: 52px;
+  &::after {
+    @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+  }
+  @include glass();
+}
+
+@include media("<=tablet") {
+  article ul {
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+  }
+}
+
+
+
+article ul li:hover {
+  background: rgba(255,255,220,0.1);
+}
+
+article ul li::before {
+  content: "📅";
+  position: absolute;
+  left: 15px;
+  top: 18px;
+  font-size: 1em;
+  opacity: 0.85;
+}
+
+
+article ul li a:hover {
+  text-decoration: underline;
+}
+
+
+@include media(">phone") 
+{
+  article ul li {
+    font-size: 1em;
+    padding: 14px 10px 12px 40px;
+  }
+  article ul li::before {
+    left: 8px;
+    top: 15px;
+    font-size: 1.1em;
+  }
+}
+
+}

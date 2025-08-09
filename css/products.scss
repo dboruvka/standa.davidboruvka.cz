@@ -1,0 +1,48 @@
+@use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
+@use "../defaults/_mixins" as *;
+@use "../defaults/_fonts" as *;
+
+
+.type-product 
+{
+
+  .price-final
+{
+    color: $zelena;
+}
+
+
+.breadcrumbs,
+.add-to-cart__quantity-label, .detail-parameters th,
+.social-buttons-wrapper,
+.p-thumbnails-wrapper,
+.shp-tabs-wrapper
+{
+    display: none;
+}
+h1
+{
+    @include nadpis(4rem);
+}
+
+h2
+{
+    @include nadpis(2rem);
+}
+
+.p-detail-inner
+{
+    position: relative;
+//  animation: breathing 4s ease-in-out infinite;
+     animation: shadowMove 4s ease-in-out infinite;
+     padding: $padding-xl;
+  box-shadow: $shadow;
+  &::before {
+    @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+  }
+  @include glass();
+
+}
+
+}

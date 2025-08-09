@@ -19,13 +19,24 @@
 	padding-top: $px;
 	padding-bottom: $px;
 }
+@mixin nadpis($rem) {
+  color: $nadpis;
+  font-weight: 500;
+  font-size: $rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 
-@mixin liquid-glass(
-  $color: $modra,
+}
+
+
+
+
+@mixin glass(
+  $color: $cerna,
   $opacity: $opacity,
   $blur: $blur,
   $radius: $radius-l,
-  $padding: $padding-l,
+  $padding: $padding-xl,
   $border: $modra,
   $border-opacity: 0.4,
 ) {
@@ -34,8 +45,10 @@
   -webkit-backdrop-filter: blur($blur);
   border-radius: $radius;
   padding: $padding;
-  border: 1px solid rgba($border, $border-opacity);
+   border: 1px solid rgba($border, $border-opacity);
   overflow: hidden;
+  position: relative;
+
 }
 
 @mixin glass-overlay(
@@ -48,12 +61,10 @@
 ) {
   content: '';
   position: absolute;
+   border: 7px solid rgba(33, 85, 109, 0.4);
+  filter: blur($blur * 1.5);
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(
-    $deg,
-    rgba($color1, $opacity1) 0%,
-    rgba($color2, $opacity2) 100%
-  );
+  background: linear-gradient($deg, rgba($color1, $opacity1) 0%, rgba($color2, $opacity2) 100%);
   pointer-events: none;
   z-index: $z;
   border-radius: inherit;

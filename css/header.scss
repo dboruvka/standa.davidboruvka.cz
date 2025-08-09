@@ -1,15 +1,183 @@
 @use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
+@use "keyframes";
+  
+.top-navigation-bar-menu li:before
+{
+    content: "";
+}
+
+
+
+.top-navigation-bar .dropdown button, .top-navigation-bar a
+{color: $bila;}
+
+.top-navigation-bar
+{
+    background-color: rgba(0, 0, 0, 0.4);  /* 40% neprůhledná černá */
+    width: 100%;
+    box-sizing: border-box;
+
+    .top-navigation-contacts // email navíc
+    {
+        display: none !important;
+    }
+/* Odstranění ohraničení kolem divů pro řešení problému s šířkou */
+.container
+{padding-top: 5px;
+    padding-bottom: 5px;
+}
+.contact-box {
+    min-height: unset;
+}
+
+ul
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+li {
+        margin-right: 10px; /* zmenšení mezery mezi položkami */
+
+}
+
+}
+
+
+
+
+.contact-box li:last-child {
+    margin-right: 0;
+}
+
+
+}
+
+.top-navigation-bar .container > div:last-child, .top-navigation-bar .container > div:first-child
+{
+   flex-basis: auto;
+   max-width: 100%;
+   overflow: hidden;
+}
+
+
+
 #header
 {
-    .search
-    {
-    display: none;
+
+    #navigation
+{
+    @include media(">phone") {
+             flex-basis: auto !important;
+        flex: 3;
+        align-self: center !important;
     }
-  .header-top, .header-top a {
-  color: $zluta;
-}   
-    background-color: $modra;
-    color: white;
 }
+.navigation-buttons
+{
+    @include media(">phone") {
+        flex-basis: auto;
+    }
+}
+
+.header-top{
+    @include media(">phone") 
+    {
+        width: 100%;
+        padding: 0;   
+        display: flex;
+        flex-wrap: wrap;
+        height: 98px;
+    }
+}
+
+    .site-name a img
+{
+    margin-top: 5px;
+    max-height: 100px;
+    @include media(">phone") {
+        margin:0
+    }
+}
+
+}
+
+.navigation-buttons a[data-target=cart]
+{
+color: $zluta;
+
+}
+
+.navigation-buttons>a[data-target=cart] i 
+{
+    background-color: $zelena;
+}
+
+#navigation
+{
+
+    overflow: visible;
+
+}
+.navigation-in
+{
+font-size: unset;
+line-height: unset;
+ul 
+{
+
+li  
+{    
+margin-right: 10px;
+
+
+a
+{
+ 
+
+      background-color: transparentize($cerna, 0.6);
+  border-radius: $radius-s;
+  font-size: 24px;
+  padding: 7px 20px;          // mezera kolem textu
+
+}
+}
+
+
+}
+
+
+
+
+    }
+
+
+
+#header
+{
+.search
+{
+display: none;}
+
+.site-name a img
+{
+margin-top:5px;
+max-height:100px
+}
+}
+
+    // [data-target="search"],
+    // [data-testid="productCardDescr"],
+    // .responsive-tools>a[data-target=search]:before,
+    // .responsive-tools>a:before
+    // {
+    //   @include media("<=phone") {
+    //     display: none !important;
+    //   }
+    // }
+

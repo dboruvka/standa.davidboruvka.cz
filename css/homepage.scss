@@ -1,3 +1,38 @@
 @use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
+
+#homepage
+{
+  background-color: $pozadi;
+  color: $bila;
+  font-size: 22px;
+}
+
+
+    .welcome h1
+    {
+    text-align:center
+    }
+    
+.w1,.w2
+{
+text-transform:uppercase;
+  font-weight: 600;
+  font-size: 90px;
+}
+
+.w1 {
+  color: #fff;
+  letter-spacing: 2px;
+      display:block;
+
+}
+.w2 {
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

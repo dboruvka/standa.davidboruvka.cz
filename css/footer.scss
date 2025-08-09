@@ -5,38 +5,15 @@
 
 #footer
 {
- background-color: $pozadi;
-}
+    background-color: transparentize(black, 0.6);
+    margin-top: 40px;
 
+.site-name,
+.custom-footer__contact h4,
+.footer-rows
 
-.custom-footer__articles {
-  position: relative;
-  animation: breathing 4s ease-in-out infinite;
-  box-shadow: $shadow;
-@include liquid-glass();
-  h4 {
-  color: rgba($zluta, 1);
-  font-size: 3rem;
-  font-weight: 700;
-}
-ul li, 
-ul li a
 {
-  color: rgba($bila, 0.9);
-  font-size: 2.5rem;
-  font-weight: 600;
+display: none;
 }
-  // Vnitřní prvky
-  &::before {
-    @include glass-overlay();
-  }
-
-
-@include media("<tablet") {
-margin: 10px;
-    padding: $padding-l;
-   border-radius: $radius-l;
-   }
-
 
 }

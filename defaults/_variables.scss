@@ -1,7 +1,7 @@
-$obrazky: 'https://dev.davidboruvka.cz/user/documents/webs/dev.davidboruvka.cz/images/';
+$obrazky: 'https://dev.davidboruvka.cz/user/documents/webs/dev.davidboruvka.cz/img/';
 $url_pozadí: $obrazky + 'pozadi.jpg';
-$blur: 10px;
-$opacity: 0.45;
+$blur: 6px;
+$opacity: 0.4;
 $shadow: 5px 5px 20px rgba(251, 191, 36, 0.3);
  
 $pozadi: transparent;
@@ -15,12 +15,14 @@ $cerna: #020101;
 $bila: #fff;
 $border: #d9d9d9;
 
+$nadpis: $zluta;
+
  $radius-s: 12px;
 $radius-m: 16px;
  $radius-l: 24px;
  $radius-xl: 32px;
 
 $padding-s: 0.5rem;
-$padding-m: 1rem;
-$padding-l: 1.5rem;
-$padding-xl: 2rem;
+$padding-m: 1.5rem;
+$padding-l: 2.5rem;
+$padding-xl: 5rem;

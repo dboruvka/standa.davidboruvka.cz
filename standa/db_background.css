@@ -1,0 +1,58 @@
+html, body {
+  /* overflow: auto; */
+}
+body {
+  background-image: var(--bg-640);
+}
+@media (orientation: portrait),
+       (-webkit-min-device-pixel-ratio: 1.5),
+       (min-resolution: 144dpi) {
+  
+  body {
+    background-image: var(--bg-1280);
+  }
+}
+@media (min-width: 640px) and (orientation: landscape) {
+  body {
+    background-image: var(--bg-1280);
+  }
+}
+@media (min-width: 640px) and (orientation: portrait) {
+  body {
+    background-image: var(--bg-2560);
+  }
+}
+@media (min-width: 640px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 640px) and (min-resolution: 144dpi) {
+  
+  body {
+    background-image: var(--bg-2560);
+  }
+}
+@media (min-width: 1280px)  and (orientation: landscape) {
+  body {
+    background-image: var(--bg-2560);
+  }
+}
+@media (min-width: 1280px)  and (orientation: portrait) {
+  body {
+    background-image: var(--bg-5120);
+  }
+}
+@media (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 1280px) and (min-resolution: 144dpi) {
+  
+  body {
+    background-image: var(--bg-5120);
+  }
+}
+@media (min-width: 2560px)  and (orientation: landscape) {
+  body {
+    background-image: var(--bg-5120);
+  }
+}
+
+
+
+
+

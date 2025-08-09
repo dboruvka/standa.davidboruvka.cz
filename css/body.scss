@@ -1,10 +1,12 @@
 @use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
+
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
 body 
 {
-  background-image: url(#{$url_pozadí});
+  //background-image: url(#{$url_pozadí});
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -14,9 +16,26 @@ body
   left: 0;
   top: 0;
   position: absolute;
+  color: $bila;
+  font-size: 22px;
 }
 
 #content-wrapper
 {
     background-color: $pozadi;
 } 
+
+.form-group>input.form-control, .form-group>select.form-control,
+textarea.form-control
+{
+border-radius: $radius-m;
+background-color: transparentize($bila,0.3);
+}
+
+
+.form-group label
+{
+  @include media(">phone") {
+    width: 250px;
+  }
+}
