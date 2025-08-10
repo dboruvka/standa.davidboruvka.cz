@@ -1,4 +1,5 @@
 @use "../defaults/_variables" as *;
+@use "../defaults/_media" as *;
 
 // Mixin pro FA7 Brands
 @mixin fa-brand($unicode) {
@@ -10,40 +11,37 @@
 // Mixin pro FA7 Solid
 @mixin fa-solid($unicode) {
   font-family: "Font Awesome 7 Free";
-  font-weight: 500;
+  font-weight: 500; // (volitelné: u FA Solid se běžně používá 900)
   content: $unicode;
 }
 
 @mixin marginX($px) {
-	margin-left: $px;
-	margin-right: $px;
+  margin-left: $px;
+  margin-right: $px;
 }
 
 @mixin marginY($px) {
-	margin-top: $px;
-	margin-bottom: $px;
+  margin-top: $px;
+  margin-bottom: $px;
 }
 
 @mixin paddingX($px) {
-	padding-left: $px;
-	padding-right: $px;
+  padding-left: $px;
+  padding-right: $px;
 }
 
 @mixin paddingY($px) {
-	padding-top: $px;
-	padding-bottom: $px;
+  padding-top: $px;
+  padding-bottom: $px;
 }
+
 @mixin nadpis($rem) {
   color: $nadpis;
   font-weight: 500;
   font-size: $rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-
 }
-
-
-
 
 @mixin glass(
   $color: $cerna,
@@ -59,10 +57,9 @@
   -webkit-backdrop-filter: blur($blur);
   border-radius: $radius;
   padding: $padding;
-   border: 1px solid rgba($border, $border-opacity);
+  border: 1px solid rgba($border, $border-opacity);
   overflow: hidden;
   position: relative;
-
 }
 
 @mixin glass-overlay(
@@ -71,15 +68,75 @@
   $opacity1: 0.1,
   $color2: $zluta,
   $opacity2: 0.05,
-  $z: 1
+  $z: 1,
+  $overlay-blur: $blur * 1.5 // ✅ přidán parametr místo nedefinovaného $blur
 ) {
   content: '';
   position: absolute;
-   border: 7px solid rgba(33, 85, 109, 0.4);
-  filter: blur($blur * 1.5);
+  border: 7px solid rgba(33, 85, 109, 0.4);
+  filter: blur($overlay-blur);
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient($deg, rgba($color1, $opacity1) 0%, rgba($color2, $opacity2) 100%);
+  background: linear-gradient(
+    $deg,
+    rgba($color1, $opacity1) 0%,
+    rgba($color2, $opacity2) 100%
+  );
   pointer-events: none;
   z-index: $z;
   border-radius: inherit;
 }
+
+@mixin products-block (
+  $center: true,
+  $card-padding: $padding-l,
+  $name-size: 2.1rem,
+  $overlay-angle: 135deg,
+  $overlay-c1: $modra,
+  $overlay-c1a: 0.1,
+  $overlay-c2: $zluta,
+  $overlay-c2a: 0.05,
+  $price-color: $bila,
+  $shadow-duration: 4s
+) {
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: if($center, center, flex-start);
+  }
+
+.product {
+  border: 0;
+
+  // základ animace pro všechny karty (ten vnitřní wrapper je .p)
+  > div {
+    animation: floatMove $shadow-duration ease-in-out infinite;
+    will-change: transform;
+  }
+
+&:nth-child(odd) > div {
+  animation-duration: 6s;
+}
+&:nth-child(even) > div {
+    animation-delay: -($shadow-duration / 2); // opačná fáze
+}
+
+
+  
+  > div {
+    &::before {
+      @include glass-overlay(
+        $overlay-angle, $overlay-c1, $overlay-c1a, $overlay-c2, $overlay-c2a, 1
+      );
+    }
+
+    .name { margin-top: 8px; @include nadpis($name-size); }
+    .price { color: $price-color; }
+    .p-bottom .p-desc { max-height: 3em; }
+    @include glass($padding: $card-padding);
+
+    .image img { border-radius: $radius-s; }
+  }
+}
+
+}
+  

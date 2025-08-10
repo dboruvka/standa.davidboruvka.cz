@@ -9,11 +9,12 @@
 
 }
 
-.h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+.h3, .h4, .h5, .h6, h2, h3, h4, h5, h6
 {
     font-weight: 700 !important;
     color: $bila;
 }
+
 
 .h3, h3
 {
@@ -24,6 +25,20 @@
 {
     font-size: 17px;
 }
+
+   .top-nav-scroll
+  {
+  background-color: transparentize($cerna, 0.2);
+    backdrop-filter: blur($blur-light);
+
+  position: fixed;
+      width: 100%;
+      /* height: 40px */
+  z-index:1000;
+  line-height:25px;
+}
+  
+
 
 
 .btn.btn-secondary, a.btn.btn-secondary
@@ -128,9 +143,31 @@ body
     height: 100vh;
     left: 0;
     top: 0;
-    position: absolute;
+   // position: absolute;
     position: relative;    
+
+    @include media(">tablet") {
+    &::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 600px;
+      height: 100vh;
+      background-image: url('https://www.standaklapuch.com/user/documents/upload/_nemazat_/standa.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left bottom;
+      background-blend-mode: multiply;
+      opacity: 0.7;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+
 }
+
 
 .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, 
 #footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content,.quantity .increase, .quantity .decrease

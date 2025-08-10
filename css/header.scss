@@ -99,20 +99,19 @@ li {
 {
     .search
 {
-display: none;}
+display: none;
+}
 
-
-        @include media(">tablet") {
-        
+@include media(">tablet") {
 
 .header-top li.facebook a::before,
 .header-top li.youtube a::before,
 .header-top li.spotify a::before
 {
   font-family: "Font Awesome 7 Brands";
-  font-size: 20px;
-
+  font-size: 25px;
 }
+
 
 
 .header-top li.facebook

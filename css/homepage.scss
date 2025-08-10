@@ -8,31 +8,116 @@
   background-color: $pozadi;
   color: $bila;
   font-size: 22px;
+
 }
 
-
-    .welcome h1
-    {
-    text-align:center
-    }
-    
-.w1,.w2
+@include media("<tablet") 
 {
-text-transform:uppercase;
-  font-weight: 600;
-  font-size: 90px;
+.columns-mobile-2 .products-block>div
+{
+  width: 100%;
 }
 
-.w1 {
-  color: #fff;
-  letter-spacing: 2px;
-      display:block;
-
 }
-.w2 {
-  letter-spacing: 2px;
-  background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+
+
+/* Animace pro nadpis (nahoru–dolů s pauzou dole) */
+@keyframes floatName {
+  0%, 20%, 100% { transform: translateY(0); }
+  50%          { transform: translateY(calc(var(--amp, 14px) * -1)); }
+  80%          { transform: translateY(0); }
+}
+
+/* Jemné „dýchání“ panelu/boxu */
+@keyframes floatMove {
+  0%, 20%, 100% { transform: translateY(0); }
+  50%          { transform: translateY(-10px); }
+  80%          { transform: translateY(0); }
+}
+
+.welcome {
+  h1 {
+    text-align: center;
+  }
+
+  .w1,
+  .w2 {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 90px;
+    display: block;              /* pod sebou */
+    will-change: transform;
+    letter-spacing: 2px;
+    line-height: 1.1;
+
+    @include media("<tablet") {
+      font-size: 60px;
+    }
+  }
+
+  /* Standa */
+  .w1 {
+    color: #fff;
+    --amp: 12px;                      /* menší zdvih */
+    animation: floatName 7s ease-in-out infinite; /* pomalejší */
+    animation-delay: 0s;
+  }
+
+  /* Klapuch */
+  .w2 {
+    --amp: 18px;                      /* větší zdvih */
+    animation: floatName 5s ease-in-out infinite; /* rychlejší */
+    animation-delay: -2.5s;           /* opačná fáze vůči 5s cyklu */
+    background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  > div {
+    @include media("<tablet") {
+      padding: 3rem;
+    }
+
+    & {
+      animation: floatMove 6s ease-in-out infinite;
+      @include glass();
+    }
+
+    &::after {
+      @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome .w1,
+  .welcome .w2,
+  .welcome > div {
+    animation: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome .w1,
+  .welcome .w2,
+  .welcome > div {
+    animation: none !important;
+  }
+}
+/* Respektuj uživatele s omezenou animací */
+@media (prefers-reduced-motion: reduce) {
+  .welcome .w1,
+  .welcome .w2,
+  .welcome > div {
+    animation: none !important;
+  }
+}
+
+    
+ 
+    
+
+
+.products-block {
+  @include products-block();
 }

@@ -3,47 +3,49 @@
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
-
 .overall-wrapper {
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  @include media(">tablet") {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 
-  > footer {
-    margin-top: auto;
-    width: 100%;
-    background-color: transparentize($cerna, $opacity-page);
-
-  }
-
-  > :nth-last-child(2) {
-    padding-bottom: 50px;
+    > :nth-last-child(2) {
+      padding-bottom: 50px;
+    }
   }
 }
 
 #footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: transparentize($cerna, $opacity-page);
 
-.site-name,
-.custom-footer__contact h4,
-.footer-rows,
-.footer-links-icons
+ 
 
-{
-display: none;
-}
+  .site-name,
+  .custom-footer__contact h4,
+  .footer-rows,
+  .footer-links-icons {
+    display: none;
+  }
 
-#signature, .copyright
-{
+  #signature,
+  .copyright {
     font-size: 14px;
     padding: 0;
     margin: 0;
-a {
-    color: $bila;
-&:hover {
-    color: $zluta;
-}
 
-}
-}
+    a {
+      color: $bila;
 
+      &:hover {
+        color: $zluta;
+      }
+    }
+  }
+}
+@include media("<tablet") {
+  #footer {           // ← teď je to top-level, výsledek bude prosté `#footer { … }`
+    margin-top: 20px;
+  }
 }
