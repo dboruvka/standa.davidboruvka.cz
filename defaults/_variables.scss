@@ -1,6 +1,8 @@
 $obrazky: 'https://dev.davidboruvka.cz/user/documents/webs/dev.davidboruvka.cz/img/';
 $url_pozadí: $obrazky + 'pozadi.jpg';
 $blur: 6px;
+$blur-light: 4px;
+$opacity-page: 0.4;
 $opacity: 0.4;
 $shadow: 5px 5px 20px rgba(251, 191, 36, 0.3);
  
@@ -13,6 +15,7 @@ $tmava: #3d7637;
 $bezova: #ffe7ad;
 $cerna: #020101;
 $bila: #fff;
+
 $border: #d9d9d9;
 
 $nadpis: $zluta;

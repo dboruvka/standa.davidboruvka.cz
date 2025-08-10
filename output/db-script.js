@@ -1,4 +1,30 @@
 $(document).ready(function() {
+
+$('.navigation-buttons a').removeClass('full hovered');
+
+
+
+$(function () {
+  var $socialItems = $('.contact-box li').filter(function () {
+    return $(this).find('.spotify, .facebook, .youtube').length > 0;
+  });
+
+  // Přesuň class z <span> na <li>
+  $socialItems.each(function () {
+    var $li = $(this);
+    var $span = $li.find('span').first();
+
+    if ($span.attr('class')) {
+      $li.addClass($span.attr('class')); // přidá class ze <span> na <li>
+      $span.removeClass();               // odstraní class ze <span>
+    }
+  });
+
+  // Přesun do hlavního menu
+  $('.navigation-in ul.menu-level-1').append($socialItems);
+});
+
+
     if ($('#navigation').length) {
         $('#navigation').insertBefore('.search');
     }
@@ -13,10 +39,12 @@ $(document).ready(function() {
     $(".contact-box>strong").remove();
 $(".cart-inner .sidebar-in-cart h4").remove();
 
-
-      $('.spotifiy_icon').appendTo('.contact-box ul');
-
+if ($('.spotify-icon').length) {
+  $('.spotify-icon').appendTo('.contact-box ul');
+}
   
+
+
   var breakpoint = document.documentElement.clientWidth;
 
     if (breakpoint > 1000) 
@@ -69,3 +97,4 @@ $(document).ready(function() {
     $('#footer #signature').append(' &amp; <a href="https://davidboruvka.cz/?utm_source=footer&amp;utm_medium=link&amp;utm_campaign=shoptet" target="_blank" title="Tvorba eshopů na shoptetu">David Borůvka</a>');
 
 });
+$(".spotifiy_icon").appendTo(".contact-box ul"),$('[data-testid="productCardDescr"]').remove(),$(".cart-empty .empty-cart-boxes").remove(),$(".cart-empty .cart-row").remove(),$(".contact-box>strong").remove(),$(".cart-inner .sidebar-in-cart h4").remove(),$(".spotifiy_icon").appendTo(".contact-box ul");var breakpoint=document.documentElement.clientWidth;breakpoint>1e3&&($(".top-navigation-contacts").before($(".contact-box")),$(window).scroll((function(){$(this).scrollTop()>40?($(".top-navigation-bar").addClass("top-nav-scroll"),$(".top-nav-button-login").addClass("hidden")):($(".top-navigation-bar").removeClass("top-nav-scroll"),$(".top-nav-button-login").removeClass("hidden"))})));

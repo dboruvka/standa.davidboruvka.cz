@@ -3,17 +3,47 @@
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
-#footer
-{
-    background-color: transparentize(black, 0.6);
-    margin-top: 40px;
+
+.overall-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+
+  > footer {
+    margin-top: auto;
+    width: 100%;
+    background-color: transparentize($cerna, $opacity-page);
+
+  }
+
+  > :nth-last-child(2) {
+    padding-bottom: 50px;
+  }
+}
+
+#footer {
 
 .site-name,
 .custom-footer__contact h4,
-.footer-rows
+.footer-rows,
+.footer-links-icons
 
 {
 display: none;
+}
+
+#signature, .copyright
+{
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+a {
+    color: $bila;
+&:hover {
+    color: $zluta;
+}
+
+}
 }
 
 }

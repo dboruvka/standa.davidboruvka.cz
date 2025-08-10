@@ -3,20 +3,41 @@
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 @use "keyframes";
-  
-.top-navigation-bar-menu li:before
+
+
+
+
+
+.popup-widget-inner:not(.cart-widget-inner)
 {
-    content: "";
+    @include media(">tablet") {
+     background-color: transparentize($cerna, $opacity);
+     border-radius: $radius-s;
+    }
 }
 
 
+.top-navigation-bar-menu 
+{
 
+li
+{
+
+    &:before {
+    content: ""; }
+a {
+    padding: 0px 5px;
+    font-size: 16px;
+}
+}
+}
 .top-navigation-bar .dropdown button, .top-navigation-bar a
 {color: $bila;}
 
 .top-navigation-bar
 {
-    background-color: rgba(0, 0, 0, 0.4);  /* 40% neprůhledná černá */
+    background-color: transparentize($cerna, $opacity-page);
+
     width: 100%;
     box-sizing: border-box;
 
@@ -31,6 +52,15 @@
 }
 .contact-box {
     min-height: unset;
+
+
+ul li>span.spotify::before {
+    display: inline-block;
+    content: url(https://585466.myshoptet.com/user/documents/upload/_nemazat_/spotify3.svg);
+    margin-right: 0px;
+    top: 4px !important;
+}
+
 }
 
 ul
@@ -47,8 +77,6 @@ li {
 }
 
 }
-
-
 
 
 .contact-box li:last-child {
@@ -69,42 +97,121 @@ li {
 
 #header
 {
-
-    #navigation
+    .search
 {
-    @include media(">phone") {
-             flex-basis: auto !important;
-        flex: 3;
-        align-self: center !important;
-    }
-}
-.navigation-buttons
+display: none;}
+
+
+        @include media(">tablet") {
+        
+
+.header-top li.facebook a::before,
+.header-top li.youtube a::before,
+.header-top li.spotify a::before
 {
-    @include media(">phone") {
-        flex-basis: auto;
-    }
+  font-family: "Font Awesome 7 Brands";
+  font-size: 20px;
+
 }
 
-.header-top{
-    @include media(">phone") 
+
+.header-top li.facebook
+{
+ margin-left: 15px;
+}
+
+.header-top li.facebook a,
+.header-top li.youtube a,
+.header-top li.spotify a {
+  font-size: 0; /* schová text */
+background-color: transparent;
+padding: 0 5px;
+
+}
+
+.header-top  li.facebook  a::before { @include fa-brand("\f09a"); } // Facebook
+.header-top  li.youtube   a::before { @include fa-brand("\f167"); } // YouTube
+.header-top  li.spotify   a::before { @include fa-brand("\f1bc"); } // Spotify
+
+}
+
+#navigation
     {
-        width: 100%;
-        padding: 0;   
-        display: flex;
-        flex-wrap: wrap;
-        height: 98px;
+        @include media(">tablet") {
+                 flex-basis: auto !important;
+            flex: 3;
+            align-self: center !important;
+        }
     }
+
+
+.btn.cart-count,
+a.btn.cart-count
+
+{
+  &::before {
+    font-family: "Font Awesome 7 Free";
+    font-weight: 900;
+    font-size: 26px !important;
+    content: "\f07a"; // košík
+  }
+  &:hover
+  {
+    color: darken($zelena, 15%);
+  }
+ @include media("<tablet") 
+ {
+    top: -34px;
+ }
+
+  .cart-price {
+font-size: 21px;  
 }
+}
+
+
+
+
+    .navigation-buttons
+    {
+        @include media(">tablet") {
+            flex-basis: auto;
+        }
+    }
+
+    .header-top{
+        @include media(">tablet") 
+        {
+            width: 100%;
+            padding: 0;   
+            display: flex;
+            flex-wrap: wrap;
+            height: 98px;
+            margin: 40px 0;
+
+            > div:first-child {
+                flex: 0 0 222px !important; 
+            }
+            > div:nth-child(2) {
+                flex: 1 1 auto !important;
+            }
+            > div:last-child {
+                flex: 0 0 222px !important;
+            }
+        }
+    }
 
     .site-name a img
-{
-    margin-top: 5px;
-    max-height: 100px;
-    @include media(">phone") {
-        margin:0
+    {
+      
+            margin: 0;
+        margin-top: 5px;
+        max-height: 100px;
+    
+        @include media("<=tablet") {
+            max-height: 60px;
+        }
     }
-}
-
 }
 
 .navigation-buttons a[data-target=cart]
@@ -120,55 +227,52 @@ color: $zluta;
 
 #navigation
 {
-
+@include media(">=tablet") {
     overflow: visible;
-
+       }
+ 
 }
 .navigation-in
 {
-font-size: unset;
-line-height: unset;
-ul 
+    font-size: unset;
+    line-height: unset;
+}
+
+.fitted .navigation-in ul 
 {
+    justify-content: center !important;
 
-li  
-{    
-margin-right: 10px;
+    li  
+    {    
+        margin-right: 10px;
 
+        a
+        {
+            background-color: transparentize($cerna, $opacity-page);
+            border-radius: $radius-s;
+            font-size: 24px;
+            padding: 7px 20px;          // mezera kolem textu
+        }
+        // aktivní/rozbalené položky
+        &.exp > a {
+            background-color: transparentize($cerna, 0.7);
+        }
 
-a
-{
- 
-
-      background-color: transparentize($cerna, 0.6);
-  border-radius: $radius-s;
-  font-size: 24px;
-  padding: 7px 20px;          // mezera kolem textu
-
-}
-}
-
-
-}
-
-
-
-
+        // hover efekt na odkazu
+        > a:hover {
+            background-color: transparentize($cerna, 0.7);
+        }
     }
-
-
-
-#header
-{
-.search
-{
-display: none;}
-
-.site-name a img
-{
-margin-top:5px;
-max-height:100px
 }
+
+.responsive-tools>a[data-target=search]:before
+{
+ display: none;
+}
+
+.responsive-tools>a[data-target=navigation]:before, .responsive-tools>a[data-target=navigation]:hover:before
+{
+    background-color: #{$zelena};
 }
 
     // [data-target="search"],
@@ -176,7 +280,7 @@ max-height:100px
     // .responsive-tools>a[data-target=search]:before,
     // .responsive-tools>a:before
     // {
-    //   @include media("<=phone") {
+    //   @include media("<=tablet") {
     //     display: none !important;
     //   }
     // }

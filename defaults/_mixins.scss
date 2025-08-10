@@ -1,5 +1,19 @@
 @use "../defaults/_variables" as *;
 
+// Mixin pro FA7 Brands
+@mixin fa-brand($unicode) {
+  font-family: "Font Awesome 7 Brands";
+  font-weight: 400;
+  content: $unicode;
+}
+
+// Mixin pro FA7 Solid
+@mixin fa-solid($unicode) {
+  font-family: "Font Awesome 7 Free";
+  font-weight: 500;
+  content: $unicode;
+}
+
 @mixin marginX($px) {
 	margin-left: $px;
 	margin-right: $px;

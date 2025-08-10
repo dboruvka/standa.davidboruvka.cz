@@ -11,4 +11,206 @@
   {
     display: none;
   }
+
+  .price-primary
+  {
+    color: $bila;
+  }
+
+#header
+{
+  border: 0;
+}
+
+ol.cart-header
+{
+  border: 2px solid $bila;
+  border-radius: $radius-m;
+     @include media(">tablet") 
+        {
+          margin-left: 0;
+          margin-right: 0;  
+        }
+
+}
+
+ol.cart-header {
+  
+  li {
+  background-color: transparentize($cerna, 0.85);
+  
+    a,
+    strong {
+      color: darken($bila, 10%);
+    }
+     &.active strong {
+      color: $zluta
+    }
+
+    &.active a,
+    &.active strong,
+    a:hover {
+      position: relative;
+      border-bottom: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 10%;
+        bottom: -2px;
+        width: 80%;
+        height: 2px;
+        background-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+ .cart-table tr 
+ {
+  background-color: transparentize($cerna, 0.6);
+  
+  &:hover {
+  background-color: transparentize($cerna, 0.7);
+
+  }
+
+  .p-name a
+  {
+    color: $zluta;
+font-size: 16px;  
+  .main-link-variant
+  {
+    color: $bila;
+  }    
+  
+  }
+  .p-availability strong
+  {
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .price-final
+  {
+    color: $bila;  
+    font-size: 18px;
+  }
+
+}
+
+
+.sidebar-in-cart
+{
+    background-color: transparentize($cerna, 0.6) !important;
+          backdrop-filter: blur($blur-light);
+
+
+  .checkout-box-wrapper
+  {
+display: none;
+  }
+    border: 1px solid $bila;
+    border-radius: $radius-m;
+
+  .summary-wrapper .price-wrapper
+  {
+    .price-primary
+    {
+      color: $bila;
+    }
+
+  }
+
+  
+  }
+}
+
+
+
+.in-krok-1,
+.in-krok-2
+{
+
+#checkoutContent
+{
+  .co-box:not(.co-billing-address),
+  .co-box.co-billing-address
+  {
+    background-color: transparentize($cerna, 0.6);
+    backdrop-filter: blur($blur-light);
+    border: 1px solid $bila;
+    border-radius: $radius-m;
+    margin-top: 40px;
+  }
+  .box-bg-default
+  {
+    background-color: transparent;
+  }
+
+  .co-box-additional
+  {
+    padding: 30px;
+  }
+
+  .co-contact-information .btn-secondary
+{
+  background-color: transparent;
+}
+  .shipping-billing-name,
+  .radio-wrapper.active .for-free,
+  .payment-shipping-price
+  {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .for-free
+  {
+    color: $zluta;
+  }
+}
+
+#checkoutSidebar
+{
+
+.toggle-contacts 
+{
+ background-color: transparentize($cerna, 0.6);
+ backdrop-filter: blur($blur-light);
+ border: 1px solid $bila;
+ border-radius: $radius-s;
+ padding: $padding-s;
+}
+
+.recapitulation-single>strong,
+.order-summary-item
+  {
+    font-size: 18px;
+    padding-right: unset;
+    border: 0;
+  }
+  .price.price-primary
+  {
+    font-size: 28px;
+    padding-right: 10px;
+  }
+
+  .order-summary-inner
+  {
+      background-color: transparentize($cerna, 0.6);
+      backdrop-filter: blur($blur-light);
+         border: 1px solid $bila;
+    border-radius: $radius-m;
+    padding: $padding-l;
+    margin-bottom: 20px;
+
+ .cart-item-name .main-link
+  {
+    font-size: 18px;
+  }
+
+
+  }
+}
+
+
 }

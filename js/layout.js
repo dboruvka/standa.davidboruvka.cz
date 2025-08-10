@@ -5,10 +5,12 @@
     $(".contact-box>strong").remove();
 $(".cart-inner .sidebar-in-cart h4").remove();
 
-
-      $('.spotifiy_icon').appendTo('.contact-box ul');
-
+if ($('.spotify-icon').length) {
+  $('.spotify-icon').appendTo('.contact-box ul');
+}
   
+
+
   var breakpoint = document.documentElement.clientWidth;
 
     if (breakpoint > 1000) 

@@ -59,7 +59,7 @@ const rewriteRules = [
 
   {
     match: /<script\s+class="dev_script".*?<\/script>/gi,
-    replace: '$1<script class="dev_script" src="/db-script.js"></script>',
+    replace: '<script class="dev_script" src="/db-script.js"></script>',
   },
 ];
 

@@ -45,7 +45,32 @@ h2
 
 }
 
+.id-714
+{
 
+article >div {
+  display: flex;
+  flex-wrap: wrap; // umožní zalomení, pokud se nevejdou na šířku
+  gap: 20px;       // mezera mezi videi
+
+  p {
+    margin: 0;
+    flex: 1 1 45%; // každé video zabere cca 45 % šířky (dvě vedle sebe)
+    iframe {
+      width: 100%; // iframe se roztáhne na šířku rodiče
+      height: auto;
+      aspect-ratio: 16/9; // udrží poměr stran
+    }
+@include media("<=tablet") 
+{
+  flex-basis: 100%; // na menších obrazovkách zabere každé video celou šířku
+}
+
+  }
+
+}
+
+}
 
 .in-news #content-wrapper .content-wrapper-in 
 {
@@ -102,7 +127,7 @@ article ul li a:hover {
 }
 
 
-@include media(">phone") 
+@include media(">tablet") 
 {
   article ul li {
     font-size: 1em;

@@ -6,20 +6,14 @@
 
 
 
-.type-category 
+.type-category
 {
-
-.category-top >.category-perex,
 .category-top >.category-perex,
 .category-top > #productsTop,
 .category-top > h4
 {
 display: none;
 }
-
-#category-header
-{
-display: none;}
 
 .breadcrumbs
 {
@@ -36,5 +30,57 @@ h2
     @include nadpis(2rem);
 }
 
+
+.category-content-wrapper
+{
+#category-header
+{
+display: none;}
+
+.products-block
+{
+.product
+{
+        @include media("<tablet") 
+        {
+            width: 100%;
+        }
+    border: 0;
+   > div
+    {
+     animation: shadowMove 4s ease-in-out infinite;
+
+        &::before {
+    @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+  }
+  .name
+  {
+    margin-top:8px;
+      @include nadpis(2.1rem);
+  }
+  .price
+  {
+    color: $bila;
+  }
+ .p-bottom .p-desc
+  {
+    max-height: 3em;
+}
+
+        @include glass($padding: $padding-l);
+
+        .image img
+        {
+            border-radius: $radius-s;
+        }
+
+    }
+
+}
+
+
+}
+
+}
 
 }

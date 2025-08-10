@@ -3,6 +3,87 @@
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
+:root {
+	--color-primary: #{$zluta};
+    --color-primary-hover: #{$zelena};
+
+}
+
+.h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6
+{
+    font-weight: 700 !important;
+    color: $bila;
+}
+
+.h3, h3
+{
+    font-size: 20px;
+}
+
+.h5, h5
+{
+    font-size: 17px;
+}
+
+
+.btn.btn-secondary, a.btn.btn-secondary
+{
+    background-color: transparentize($cerna, $opacity);
+    border-radius: $radius-s;
+}
+
+.radio-wrapper input[type=checkbox]:checked+label:before, .radio-wrapper input[type=radio]:checked+label:before,
+.radio-wrapper input[type=checkbox]:checked+label:after, .radio-wrapper input[type=radio]:checked+label:after,
+input[type=checkbox]:checked+label:before, input[type=radio]:checked+label:before
+{
+    background-color: $tmava;
+    border-color: $zelena;
+}
+
+.radio-wrapper input[type=checkbox]:checked+label:after, .radio-wrapper input[type=radio]:checked+label:after
+{
+    border-color: $tmava;
+}
+
+.quantity input
+{
+    font-size: 20px;
+}
+
+.unit-value,
+.additional-information
+{
+    color: $bila;
+}
+
+.btn.btn-primary, a.btn.btn-primary
+{
+    background-color:$zelena;
+    border: 0;
+    color: $bila;
+    border-radius: $radius-s;
+
+    &:hover
+    {
+        background-color: darken($zelena, 10%);
+    }
+}
+
+.btn.btn-conversion,
+a.btn.btn-conversion
+
+{
+            background-color: $tmava;
+            border-radius: $radius-m;
+            border: 0;
+
+    &:hover
+    {
+        background-color:transparentize($zelena, $opacity);
+        border: 0;
+    }
+}
+
 .top-navigation-bar, .navigation-in > ul > li, .homepage-box, .custom-footer, .footer-bottom, .footer-links-icons
 {
     border: 0;
@@ -52,14 +133,7 @@ body
 }
 
 .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, 
-#footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content
+#footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content,.quantity .increase, .quantity .decrease
  {
      background-color: transparent !important; 
- }
-
-
-
-// .top-navigation-bar, .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, #footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .content-wrapper, .category-header, .category-header input[type="radio"]:checked + label, .btn.btn-default, a.btn.btn-default, .filter-sections, .quantity .increase, .quantity .decrease, .shp-tabs-holder, .shp-tabs, .active .shp-tab-link, .shp-tab-link,
-// {
-//     background-color: transparent !important; 
-// }
+ } 

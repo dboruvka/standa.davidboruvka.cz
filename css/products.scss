@@ -13,6 +13,7 @@
 }
 
 
+
 .breadcrumbs,
 .add-to-cart__quantity-label, .detail-parameters th,
 .social-buttons-wrapper,
@@ -42,6 +43,50 @@ h2
     @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
   }
   @include glass();
+
+  .p-info-wrapper
+{
+  .variant-list
+  {
+    select
+    {
+      width: 260px;
+      background-color: transparentize($bila, $opacity);
+      font-size:  20px;
+      color: $cerna;
+      padding: 8px;
+      border-radius: $radius-s;
+    }
+  }
+  .quantity
+  {
+    border-radius:5px;
+    margin-right: 8px;
+    border-style:solid;
+    input
+    {
+      width: 40px;
+    }
+  }
+  .add-to-cart-button
+  {
+     &:hover
+    {
+        background-color: darken($zelena, 10%);
+    }
+  &:before
+  {
+    font-size: 15px;
+  }
+    font-size: 20px;
+    background-color:$zelena;
+    border: 0;
+    color: $bila;
+    border-radius: $radius-s;
+  }
+ 
+
+}
 
 }
 
