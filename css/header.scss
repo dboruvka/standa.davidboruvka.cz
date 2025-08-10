@@ -231,11 +231,31 @@ color: $zluta;
        }
  
 }
-.navigation-in
-{
+
+.navigation-in {
+  /* základní deklarace oddělím, kvůli mixed-decls */
+  & {
     font-size: unset;
     line-height: unset;
+  }
+
+  @include media("<tablet") {
+    & {
+      background: transparentize($cerna, 0.1);
+//    background-color: darken($bila, 70%);
+      color: $bila;
+    }
+    a {
+      color: $bila;
+
+      &:hover {
+        color: $zluta; // volitelné
+      }
+    }
+  }
 }
+
+
 
 .fitted .navigation-in ul 
 {

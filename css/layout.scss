@@ -170,7 +170,15 @@ body
 
 
 .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, 
-#footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content,.quantity .increase, .quantity .decrease
+#footer > .container, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content,.quantity .increase, .quantity .decrease
  {
      background-color: transparent !important; 
- } 
+@include media(">tablet") {
+.navigation-in
+{
+         background-color: transparent !important; 
+
+}
+
+}
+}

@@ -14,6 +14,12 @@
   80%          { transform: translateY(0); }
 }
 
+@keyframes floatNameSlowUp {
+  0%, 20%, 100% { transform: translateY(0); }
+  60%          { transform: translateY(calc(var(--amp, 18px) * -1)); }
+  80%          { transform: translateY(0); }
+}
+
 
 // h1 {
 //   display: flex;

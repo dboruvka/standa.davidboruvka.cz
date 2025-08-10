@@ -64,15 +64,16 @@
   }
 
   /* Klapuch */
-  .w2 {
-    --amp: 18px;                      /* větší zdvih */
-    animation: floatName 5s ease-in-out infinite; /* rychlejší */
-    animation-delay: -2.5s;           /* opačná fáze vůči 5s cyklu */
-    background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
+.w2 {
+  --amp: 18px;
+  animation: floatNameSlowUp 5s ease-in-out infinite;
+  animation-delay: -2.5s;
+  background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 
   > div {
     @include media("<tablet") {

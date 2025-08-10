@@ -21,6 +21,17 @@
     transform: translateY(0);
   }
 }
+@keyframes floatNameSlowUp {
+  0%, 20%, 100% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(calc(var(--amp, 18px) * -1));
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
 @keyframes floatMove {
   0%, 20%, 100% {
     transform: translateY(0); /* dole – pauza */
@@ -336,8 +347,23 @@ h6,
 }
 
 .navigation-in {
+  /* základní deklarace oddělím, kvůli mixed-decls */
+}
+.navigation-in {
   font-size: unset;
   line-height: unset;
+}
+@media (max-width: 767px) {
+  .navigation-in {
+    background: rgba(2, 1, 1, 0.9);
+    color: #fff;
+  }
+  .navigation-in a {
+    color: #fff;
+  }
+  .navigation-in a:hover {
+    color: #fbbf24;
+  }
 }
 
 .fitted .navigation-in ul {
@@ -499,8 +525,14 @@ body {
 }
 
 .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box,
-#footer > .container, .navigation-in, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content, .quantity .increase, .quantity .decrease {
+#footer > .container, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content, .quantity .increase, .quantity .decrease {
   background-color: transparent !important;
+}
+@media (min-width: 769px) {
+  .top-navigation-menu .navigation-in, .top-navigation-contacts .navigation-in, #header .navigation-in, .homepage-box .navigation-in,
+  #footer > .container .navigation-in, .breadcrumbs .navigation-in, .sidebar .navigation-in, body .navigation-in, .cart-content .navigation-in, .cart-header .navigation-in, .cart-table tr td .navigation-in, .cart-table tr td.cart-p-image .navigation-in, .in-dekujeme #content .navigation-in, .quantity .increase .navigation-in, .quantity .decrease .navigation-in {
+    background-color: transparent !important;
+  }
 }
 
 body {
@@ -598,9 +630,9 @@ textarea.form-control {
   animation-delay: 0s;
 }
 .welcome .w2 {
-  --amp: 18px; /* větší zdvih */
-  animation: floatName 5s ease-in-out infinite; /* rychlejší */
-  animation-delay: -2.5s; /* opačná fáze vůči 5s cyklu */
+  --amp: 18px;
+  animation: floatNameSlowUp 5s ease-in-out infinite;
+  animation-delay: -2.5s;
   background: linear-gradient(90deg, #8db33d 10%, #5bb6a8 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
