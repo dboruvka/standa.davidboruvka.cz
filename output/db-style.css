@@ -4,6 +4,16 @@
     opacity: 0.7;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes floatName {
   0%, 20%, 100% {
     transform: translateY(0);
@@ -617,9 +627,9 @@ textarea.form-control {
   /* Klapuch */
 }
 .welcome .hometext {
-  animation: floatName 7s ease-in-out infinite; /* pomalejší */
+  animation: fadeIn 2s ease forwards, floatName 7s ease-in-out infinite 2s; /* pak teprve “plavání” */
   text-align: center;
-  font-size: 45px;
+  font-size: 50px;
   text-align: center;
   color: #fbbf24;
   margin-top: 2rem;

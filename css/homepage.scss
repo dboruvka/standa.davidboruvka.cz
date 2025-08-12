@@ -25,10 +25,10 @@
   
   .hometext
   {
-        animation: floatName 7s ease-in-out infinite; /* pomalejší */
-
+    animation: fadeIn 2s ease forwards, /* nejděřív fade-in */
+             floatName 7s ease-in-out infinite 2s; /* pak teprve “plavání” */
     text-align: center;
-    font-size: 45px;
+    font-size: 50px;
     text-align: center;
     color: $zluta;
     margin-top: 2rem;
