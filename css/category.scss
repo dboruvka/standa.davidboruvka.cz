@@ -28,6 +28,11 @@ border-radius: $radius-s;
 .type-category
 {
 
+  .breadcrumbs
+{
+    display: none;
+} 
+
 .columns-mobile-2 .products-block>div .flags-extra
 {
     right: 5px;
@@ -39,6 +44,19 @@ border-radius: $radius-s;
 }
 }
 
+.content-wrapper-in
+{
+    position: relative;
+//  animation: breathing 4s ease-in-out infinite;
+     animation: shadowMove 4s ease-in-out infinite;
+     padding: $padding-xl;
+  box-shadow: $shadow;
+  &::before {
+    @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
+  }
+  @include glass($opacity: 0);
+
+
 
 
 .category-top >.category-perex,
@@ -48,10 +66,7 @@ border-radius: $radius-s;
 display: none;
 }
 
-.breadcrumbs
-{
-    display: none;
-}    
+   
 
 h1
 {
@@ -102,6 +117,8 @@ display: none;}
 }
 
   @include products-block();
+}
+
 }
 
 }

@@ -3,7 +3,15 @@ $(document).ready(function() {
 
 
 $('.id-1 .welcome-wrapper').insertBefore($('.homepage-group-title').first());
-  
+
+// $(function(){
+//     if ($('.id-1').length && $('.site-name > a').length) {
+//         var siteNameLink = $('.site-name > a').first().clone();
+//         siteNameLink.removeAttr('data-testid').addClass('logo-h1');
+//         $('h1').first().before(siteNameLink);
+//     }
+// });
+
 $('.welcome h1').each(function(){
   var $h1 = $(this);
   var words = $h1.text().split(' ');

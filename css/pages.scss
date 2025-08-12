@@ -85,6 +85,9 @@ article ul {
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 24px;
   width: 100%;
+  @include media("<=tablet") {
+   margin: 0;
+  }
 }
 
 article ul li {
