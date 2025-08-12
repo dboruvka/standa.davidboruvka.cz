@@ -79,10 +79,10 @@ article >div {
 
 article ul {
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: $padding-l;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 24px;
   width: 100%;
 }
@@ -90,13 +90,15 @@ article ul {
 article ul li {
   box-sizing: border-box;
   position: relative;
-  padding: $padding-l;
-  border-left: 6px solid var(--main-color);
-  min-height: 52px;
+  min-height: 55px;
+ 
+
   &::after {
     @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
   }
   @include glass();
+      padding: 14px 10px 12px 40px;
+
 }
 
 @include media("<=tablet") {
@@ -116,28 +118,28 @@ article ul li::before {
   content: "📅";
   position: absolute;
   left: 15px;
-  top: 18px;
-  font-size: 1em;
-  opacity: 0.85;
+  top: 20px;
+  font-size: 14px;
+  opacity: 0.9;
 }
 
 
 article ul li a:hover {
-  text-decoration: underline;
+  text-decoration: underline; 
 }
 
 
-@include media(">tablet") 
-{
-  article ul li {
-    font-size: 1em;
-    padding: 14px 10px 12px 40px;
-  }
-  article ul li::before {
-    left: 8px;
-    top: 15px;
-    font-size: 1.1em;
-  }
-}
+// @include media(">tablet") 
+// {
+//   article ul li {
+//     font-size: 1em;
+//     padding: 14px 10px 12px 40px;
+//   }
+//   article ul li::before {
+//     left: 8px;
+//     top: 15px;
+//     font-size: 14px;
+//   }
+// }
 
 }

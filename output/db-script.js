@@ -42,7 +42,6 @@ $(".cart-inner .sidebar-in-cart h4").remove();
 if ($('.spotify-icon').length) {
   $('.spotify-icon').appendTo('.contact-box ul');
 }
-  
 
 
   var breakpoint = document.documentElement.clientWidth;
@@ -61,6 +60,13 @@ if ($('.spotify-icon').length) {
             }
       });     
     } 
+if (dataLayer[0].shoptet.pageType === "cart")
+{
+    if ($('#navigation').length) {
+        $('#navigation').insertBefore('.search');
+    }
+}
+
 
 $(document).ready(function() {
 
@@ -68,27 +74,49 @@ $(document).ready(function() {
 $('.id-1 .welcome-wrapper').insertBefore($('.homepage-group-title').first());
   
 $('.welcome h1').each(function(){
-  var words = $(this).text().split(' ');
-  $(this).empty();
+  var $h1 = $(this);
+  var words = $h1.text().split(' ');
+  $h1.empty();
+
   $.each(words, function(i, word){
     $('<span>', {
       'class': 'w' + (i+1),
       'text': word
-    }).appendTo($('.welcome h1'));
-    if (i < words.length - 1) $('.welcome h1').append(' ');
+    }).appendTo($h1);
+    if (i < words.length - 1) $h1.append(' ');
   });
+
+  // Přidání <p> s homeText, pokud je definovaný a neprázdný
+  if (typeof homeText !== 'undefined' && homeText.trim() !== '') {
+    $('<p>', {
+      'class': 'hometext',
+      'text': homeText
+    }).insertAfter($h1);
+  }
+});
+
 });
 
 
+
+$(document).ready(function() {
+
+
+$(function () {
+  var $discount = $('.flags.flags-extra .flag-discount');
+  if ($discount.length) {
+    $discount.each(function () {
+      var $this = $(this);
+      var sleva = $this.find('.price-save').html(); // necháme span i HTML
+      $this.html('Sleva až<br>' + sleva);
+    });
+  }
 });
 
 
-if (dataLayer[0].shoptet.pageType === "cart")
-{
-    if ($('#navigation').length) {
-        $('#navigation').insertBefore('.search');
-    }
-}
+
+});
+
 
 $(document).ready(function() {
 

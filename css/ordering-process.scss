@@ -24,10 +24,11 @@
 
 ol.cart-header
 {
-  border: 2px solid $bila;
-  border-radius: $radius-m;
      @include media(">tablet") 
         {
+  border: 2px solid $bila;
+  border-radius: $radius-m;
+
           margin-left: 0;
           margin-right: 0;  
         }
@@ -38,7 +39,9 @@ ol.cart-header {
   
   li {
   background-color: transparentize($cerna, 0.85);
-  
+      @include media("<=tablet") {
+  background-color: transparentize($cerna, 0.25);
+}
     a,
     strong {
       color: darken($bila, 10%);
@@ -69,7 +72,14 @@ ol.cart-header {
  .cart-table tr 
  {
   background-color: transparentize($cerna, 0.6);
-  
+       @include media("<=tablet") 
+        {
+          margin: 10px;
+          padding: 10px;
+          border-radius: $radius-s;
+          border: 1px solid $bila;
+        }
+
   &:hover {
   background-color: transparentize($cerna, 0.7);
 
@@ -103,6 +113,11 @@ font-size: 16px;
 {
     background-color: transparentize($cerna, 0.6) !important;
           backdrop-filter: blur($blur-light);
+   @include media("<=tablet") 
+        {
+          margin: 10px;
+          padding: 10px;
+        }
 
 
   .checkout-box-wrapper
@@ -141,6 +156,12 @@ display: none;
     border: 1px solid $bila;
     border-radius: $radius-m;
     margin-top: 40px;
+    @include media("<=tablet") 
+        {
+          margin: 10px;
+        }
+
+ 
   }
   .box-bg-default
   {
@@ -171,6 +192,12 @@ display: none;
 
 #checkoutSidebar
 {
+      @include media("<=tablet") 
+        {
+          margin: 10px;
+        }
+
+        
 
 .toggle-contacts 
 {

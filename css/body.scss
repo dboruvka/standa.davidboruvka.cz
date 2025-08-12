@@ -34,7 +34,7 @@ background-color: transparentize($bila,0.3);
 
 .form-group label
 {
-  @include media(">phone") {
+  @include media(">tablet") {
     width: 250px;
   }
 }

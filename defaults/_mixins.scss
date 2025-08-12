@@ -60,6 +60,10 @@
   border: 1px solid rgba($border, $border-opacity);
   overflow: hidden;
   position: relative;
+
+ @include media("<tablet") {
+    padding: $padding-l;
+  }
 }
 
 @mixin glass-overlay(

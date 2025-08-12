@@ -20,22 +20,20 @@
 
 }
 
-
-/* Animace pro nadpis (nahoru–dolů s pauzou dole) */
-@keyframes floatName {
-  0%, 20%, 100% { transform: translateY(0); }
-  50%          { transform: translateY(calc(var(--amp, 14px) * -1)); }
-  80%          { transform: translateY(0); }
-}
-
-/* Jemné „dýchání“ panelu/boxu */
-@keyframes floatMove {
-  0%, 20%, 100% { transform: translateY(0); }
-  50%          { transform: translateY(-10px); }
-  80%          { transform: translateY(0); }
-}
-
 .welcome {
+
+  
+  .hometext
+  {
+        animation: floatName 7s ease-in-out infinite; /* pomalejší */
+
+    text-align: center;
+    font-size: 45px;
+    text-align: center;
+    color: $zluta;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
   h1 {
     text-align: center;
   }
@@ -77,12 +75,12 @@
 
   > div {
     @include media("<tablet") {
-      padding: 3rem;
+      padding: 2rem;
     }
 
     & {
       animation: floatMove 6s ease-in-out infinite;
-      @include glass();
+      @include glass($padding:3rem);
     }
 
     &::after {
@@ -120,5 +118,23 @@
 
 
 .products-block {
+
+  .image
+{
+.flags-extra .flag
+{
+    font-size: 18px;
+    width: 80px;
+    height: 80px;
+    font-weight: 600;
+}
+
+.flag-discount
+{
+    background-color: $oranzova;
+}
+}
+
+  
   @include products-block();
 }

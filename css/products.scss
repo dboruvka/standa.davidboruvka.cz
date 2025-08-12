@@ -7,6 +7,9 @@
 .type-product
 {
 
+
+
+
   .price-final
 {
     color: $zelena;
@@ -25,12 +28,32 @@
 h1
 {
     @include nadpis(4rem);
-}
+@include media("<tablet") {
+    @include nadpis(3rem);
+  }
+  }
 
 h2
 {
     @include nadpis(2rem);
 }
+
+.p-image-wrapper
+{
+
+.flag-discount
+{
+  display: none;
+}
+
+.p-image img
+{
+  border-radius: $radius-s;
+}
+
+}
+
+
 
 .p-detail-inner
 {
@@ -58,6 +81,18 @@ h2
       border-radius: $radius-s;
     }
   }
+
+ .price-additional, .price-standard
+{
+  font-size: 18px;
+}
+.price-save
+{
+  color: $oranzova;
+  font-weight: 500;
+  font-size:21px;
+  font-family: var(--main-font);
+}
   .quantity
   {
     border-radius:5px;

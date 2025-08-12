@@ -11,8 +11,10 @@ const mainScss = 'css/main.scss';
 const jsOrder = [
   'js/header.js',
   'js/layout.js',
-  'js/homepage.js',
   'js/cart.js',
+
+  'js/homepage.js',
+  'js/category.js',
   'js/footer.js',
   'js/**/*.js'
 ];

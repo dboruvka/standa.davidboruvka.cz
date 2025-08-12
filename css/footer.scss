@@ -20,7 +20,10 @@
   width: 100%;
   background-color: transparentize($cerna, $opacity-page);
 
- 
+ #signature img
+ {
+  width: 20px;
+ }
 
   .site-name,
   .custom-footer__contact h4,

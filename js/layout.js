@@ -8,7 +8,6 @@ $(".cart-inner .sidebar-in-cart h4").remove();
 if ($('.spotify-icon').length) {
   $('.spotify-icon').appendTo('.contact-box ul');
 }
-  
 
 
   var breakpoint = document.documentElement.clientWidth;
