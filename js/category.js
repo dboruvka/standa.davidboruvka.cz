@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-
+    
 
 $(function () {
   var $discount = $('.flags.flags-extra .flag-discount');
@@ -14,6 +14,4 @@ $(function () {
 });
 
 
-
 });
-

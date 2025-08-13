@@ -67,6 +67,10 @@ h2
   }
   @include glass();
 
+[data-testid="productCardDescr"] {
+  display: none;
+}
+
   .p-info-wrapper
 {
   .variant-list

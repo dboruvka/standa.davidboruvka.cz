@@ -108,7 +108,7 @@ $('.welcome h1').each(function(){
 
 
 $(document).ready(function() {
-
+    
 
 $(function () {
   var $discount = $('.flags.flags-extra .flag-discount');
@@ -122,9 +122,19 @@ $(function () {
 });
 
 
-
 });
 
+
+$(document).ready(function() {
+    
+
+ if (dataLayer[0].shoptet.pageType === "productDetail") {
+var newContent = $('#description .basic-description').html();
+    $('.p-short-description').after(newContent);
+
+}
+
+});
 
 $(document).ready(function() {
 

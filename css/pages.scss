@@ -99,8 +99,9 @@ article ul li {
   &::after {
     @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
   }
-  @include glass();
       padding: 14px 10px 12px 40px;
+
+  @include glass();
 
 }
 
@@ -124,6 +125,9 @@ article ul li::before {
   top: 20px;
   font-size: 14px;
   opacity: 0.9;
+
+  @include media("<=tablet") {
+content: "";  }
 }
 
 

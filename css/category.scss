@@ -23,10 +23,11 @@ border-radius: $radius-s;
 }
 }
 
-
-
 .type-category
 {
+
+
+
 
   .breadcrumbs
 {
@@ -56,9 +57,6 @@ border-radius: $radius-s;
   }
   @include glass($opacity: 0);
 
-
-
-
 .category-top >.category-perex,
 .category-top > #productsTop,
 .category-top > h4
@@ -67,7 +65,6 @@ display: none;
 }
 
    
-
 h1
 {
     @include nadpis(4rem);
@@ -117,6 +114,9 @@ display: none;}
 }
 
   @include products-block();
+
+
+
 }
 
 }

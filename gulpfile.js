@@ -15,6 +15,7 @@ const jsOrder = [
 
   'js/homepage.js',
   'js/category.js',
+  'js/product.js',
   'js/footer.js',
   'js/**/*.js'
 ];

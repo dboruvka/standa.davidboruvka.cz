@@ -102,6 +102,26 @@ li {
 display: none;
 }
 
+@include media('>=768px', '<=1024px') {
+
+.header-top>div
+{
+  flex: 1 0 auto !important;
+}
+
+.fitted .navigation-in ul li
+{
+    white-space: nowrap;
+}
+
+.header-top li.facebook,
+.header-top li.youtube,
+.header-top li.spotify
+{
+ display: none;
+}
+}
+
 @include media(">tablet") {
 
 .header-top li.facebook a::before,
@@ -189,13 +209,13 @@ font-size: 21px;
             margin: 40px 0;
 
             > div:first-child {
-                flex: 0 0 222px !important; 
+                flex: 0 0 auto !important; 
             }
             > div:nth-child(2) {
                 flex: 1 1 auto !important;
             }
             > div:last-child {
-                flex: 0 0 222px !important;
+                flex: 0 0 auto !important;
             }
         }
     }
@@ -233,7 +253,18 @@ color: $zluta;
 }
 
 .navigation-in {
-  /* základní deklarace oddělím, kvůli mixed-decls */
+
+
+    ul
+{
+    flex-wrap: nowrap;
+}
+
+
+
+
+
+    /* základní deklarace oddělím, kvůli mixed-decls */
   & {
     font-size: unset;
     line-height: unset;

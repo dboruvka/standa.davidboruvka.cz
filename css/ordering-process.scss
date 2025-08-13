@@ -111,7 +111,10 @@ font-size: 16px;
 
 .sidebar-in-cart
 {
-    background-color: transparentize($cerna, 0.6) !important;
+    border: 1px solid $bila;
+    border-radius: $radius-m;
+
+  background-color: transparentize($cerna, 0.6) !important;
           backdrop-filter: blur($blur-light);
    @include media("<=tablet") 
         {
@@ -124,8 +127,6 @@ font-size: 16px;
   {
 display: none;
   }
-    border: 1px solid $bila;
-    border-radius: $radius-m;
 
   .summary-wrapper .price-wrapper
   {

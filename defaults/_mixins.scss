@@ -135,7 +135,7 @@
 
     .name { margin-top: 8px; @include nadpis($name-size); }
     .price { color: $price-color; }
-    .p-bottom .p-desc { max-height: 3em; }
+    .p-bottom .p-desc { max-height: unset; overflow: visible; }
     @include glass($padding: $card-padding);
 
     .image img { border-radius: $radius-s; }
