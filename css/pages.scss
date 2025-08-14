@@ -99,9 +99,9 @@ article ul li {
   &::after {
     @include glass-overlay(135deg, $modra, 0.1, $zluta, 0.05, 1);
   }
-      padding: 14px 10px 12px 40px;
-
+   
   @include glass();
+   padding: 14px 10px 12px 40px;
 
 }
 

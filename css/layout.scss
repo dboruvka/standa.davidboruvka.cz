@@ -44,7 +44,10 @@
   line-height:25px;
 }
   
-
+.products-block.products>div
+{
+    padding: unset;
+}
 
 
 .btn.btn-secondary, a.btn.btn-secondary
@@ -137,62 +140,6 @@ display: none !important;
 .external-fonts-loaded .empty-content, .blank-mode .empty-content, .SizeID-button .sb-button, .SizeID-button .sb-button span, .external-fonts-loaded .vote-name, .blank-mode .vote-name, .external-fonts-loaded body, body.blank-mode, .external-fonts-loaded, .blank-mode, .external-fonts-loaded h1, .external-fonts-loaded h2, .external-fonts-loaded h3, .external-fonts-loaded h4, .external-fonts-loaded h5, .external-fonts-loaded .h1, .external-fonts-loaded .h2, .external-fonts-loaded .h3, .external-fonts-loaded .cart-table .main-link, .external-fonts-loaded .cart-related-name, .blank-mode h1, .blank-mode h2, .blank-mode h3, .blank-mode .cart-table .main-link, .blank-mode .cart-related-name, .header-top .btn.cart-count .cart-price, .btn.btn-default, a.btn.btn-default, .external-fonts-loaded .btn, .external-fonts-loaded .price-final, .external-fonts-loaded .products .name {
     font-family: var(--main-font);
 }
-body
-{
-    background-image: var(--bg-desktop);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-
-    width: 100%;
-    height: 100vh;
-    left: 0;
-    top: 0;
-   // position: absolute;
-    position: relative;    
-}
-
-    body.in-index {
-    @include media(">tablet") {
-    &::before {
-      content: "";
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 500px;
-      height: 100vh;
-      background-image: url('https://www.standaklapuch.com/user/documents/upload/_nemazat_/standa.png');
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: left bottom;
-      background-blend-mode: multiply;
-      opacity: 0;
-      z-index: 1;
-      pointer-events: none;
-         animation: StandaZoom 1.5s ease-in forwards 0.2s; // trvá 1.5s, start po 0.2s
-
-    }
-
-   @include media('width>=900px', 'width<=1281px') 
-  {
-    &::before  {
-      width: 280px;
-      left:-50px
-
-  }
-
-
- }
-
-
-
-
-  }
-    }
-
-
-
 
 .top-navigation-menu, .top-navigation-contacts, #header, .homepage-box, 
 #footer > .container, .breadcrumbs, .sidebar, body, .cart-content, .cart-header, .cart-table tr td, .cart-table tr td.cart-p-image, .in-dekujeme #content,.quantity .increase, .quantity .decrease

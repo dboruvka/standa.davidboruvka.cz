@@ -8,7 +8,6 @@
   background-color: $pozadi;
   color: $bila;
   font-size: 22px;
-
 }
 
 @include media("<tablet") 
@@ -43,6 +42,9 @@
     color: $bila;
     margin-top: 2rem;
     margin-bottom: 2rem;
+        @include media("width < 200px") {
+      font-size: 23px;
+    }
   }
   h1 {
     text-align: center;
@@ -61,6 +63,9 @@
 
     @include media("<tablet") {
       font-size: 60px;
+    }
+     @include media("width < 200px") {
+      font-size: 23px;
     }
   }
 

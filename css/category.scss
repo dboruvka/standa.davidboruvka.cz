@@ -100,15 +100,16 @@ h2
 {
 #category-header
 {
-display: none;}
+display: none;
+}
 
 .products-block {
-
-.flags-extra
-{
-.price-standard
-{
-    display: none
+  column-gap: 20px;
+  .flags-extra
+  {
+    .price-standard
+    {
+      display: none;
 }
 
 }

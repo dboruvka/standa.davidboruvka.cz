@@ -3,21 +3,70 @@
 @use "../defaults/_mixins" as *;
 @use "../defaults/_fonts" as *;
 
-body 
+body
 {
-  //background-image: url(#{$url_pozadí});
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-size: cover;
-  // background-position: center;
-  // width: 100%;
-  // height: 100vh;
-  // left: 0;
-  // top: 0;
-  // position: absolute;
   color: $bila;
   font-size: 22px;
+  background-image: var(--bg-desktop);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+   // position: absolute;
+    position: relative;  
+    
+    @include media("<=tablet") {
+      background-image: var(--bg-mobil);
+    
+
+
+        }
+  
 }
+
+    body.in-index {
+    @include media(">tablet") {
+    &::before {
+      content: "";
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 500px;
+      height: 100vh;
+      background-image: url('https://www.standaklapuch.com/user/documents/upload/_nemazat_/standa.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left bottom;
+      background-blend-mode: multiply;
+      opacity: 0;
+      z-index: 1;
+      pointer-events: none;
+         animation: StandaZoom 1.5s ease-in forwards 0.2s; // trvá 1.5s, start po 0.2s
+
+   @include media('width>=900px', 'width<=1281px') 
+  {
+    &::before  {
+      width: 280px;
+      left:-50px
+
+  }
+
+
+ }
+
+
+
+
+  }
+    }
+}
+
+
 
 #content-wrapper
 {
