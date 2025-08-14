@@ -22,9 +22,9 @@ body
     
     @include media("<=tablet") {
       background-image: var(--bg-mobil);
-    
-
-
+      background-size:contain;
+      background-color: #71635ed5 !important;
+      background-position: top center;
         }
   
 }

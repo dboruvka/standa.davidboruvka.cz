@@ -601,6 +601,9 @@ body {
 @media (max-width: 768px) {
   body {
     background-image: var(--bg-mobil);
+    background-size: contain;
+    background-color: rgba(113, 99, 94, 0.8352941176) !important;
+    background-position: top center;
   }
 }
 
